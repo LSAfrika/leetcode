@@ -16,7 +16,8 @@ class LinkedList{
         return this.size===0
     }
 
-     linkedlistsize(){
+     Size(){
+        console.log('size of linkedlist',this.size);
         return this.size
      }
 
@@ -56,9 +57,10 @@ class LinkedList{
 
             currentnode.next=nodevalue
         }
+        this.size++
      }
 
-     viewlistvalues(){
+     view(){
         if(this.linkedlistempty()) return console.log('linkedlist is empty');
 
         let currentnode=this.head
@@ -97,88 +99,32 @@ class LinkedList{
      }
 
      removenode(index){
-        if(index<0||index>this.size)  {console.log('remove node index out of range');return;}
+        if(index<0||index>this.size)  {console.log('index out of range');return;}
         if(index==0)this.head=this.head.next
         if(index>0){
-            let counter=0
-            let currenthead=this.head
+            let counter=1
+            let currentnode=this.head
             let previousnode
             
 
             while(counter<index){
 
-                if(counter==index-1)previousnode=currenthead
-                currenthead=currenthead.next
+                if(counter==index-1)previousnode=currentnode
+                currentnode=currentnode.next
                 counter++
             }
 
             // console.log('previous head remove function',previousnode.value);
-            // console.log('current head remove function',currenthead.value);
-           // counter=1
-            previousnode.next=currenthead.next
+            // console.log('current head remove function',currentnode.value);
+
+            previousnode.next=currentnode.next
         }
 
+        console.log('size decrease:',this.size);
         this.size--
-        // console.log('size decrease:',this.size);
 
         
 
-     }
-
-     //SHORT HAND WAY OF REMOVING FOM LIST WHILE REUSING DELETE NODE METHODE
-
-     removenodewithspecificvalue(value){
-
-        if(this.linkedlistempty())return console.log('list is empty');
-        let currentnode=this.head
-       console.log('current link size: ',this.size);
-        for (let i = 0; i < this.size; i++) {
-
-            // console.log('current node value',currentnode.value,i);
-            if(currentnode.value==value){
-
-                // console.log(i);
-                this.removenode(i);
-                return console.log(`${value} removed  from list at index ${i}`);
-            } 
-
-            currentnode=currentnode.next 
-                 
-        }
-
-        console.log(`${value} is not in the linked list`);
-     }
-
-     insert(value,index){
-        if(index<0||index>this.size) return console.log('index out of range');
-        if(index==0) this.prepend(value)
-     }
-
-     searchlist(value){
-
-        if(this.linkedlistempty())return console.log('no search done since slist is empty');
-
-        let currentnode=this.head
-        let listscounter=0
-        let valueindex=[]
-     
-
-
-
-
-      
-        while (currentnode) {
-       
-            if(currentnode.value==value) valueindex.push(listscounter)
-            currentnode=currentnode.next
-            listscounter++
-            
-        }
-     
-
-        if (valueindex.length>0) return console.log(`the value ${value} occurs ${valueindex.length} time(s) at index [${valueindex}]`);
-            return console.log(` ${value} is not in any node in the list`);
-        
      }
 }
 

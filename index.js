@@ -73,43 +73,17 @@ const linked_list=()=>{
 
     // console.log(linklist.linkedlistempty());
     // console.log(linklist.linkedlistsize());
-    linklist.view()
+    linklist.viewlistvalues()
+    console.log('=============prepend value ==================');
 
     linklist.prepend(20)
     linklist.prepend(30)
-    linklist.prepend(40)
 
-    linklist.view()
     linklist.append(60)
     linklist.append(50)
 linklist.append(10)
 linklist.append(40)
 linklist.append(40)
-// linklist.view()
-linklist.insertnode(100,4)
-linklist.insertnode(40,8)
-// linklist.Size()
-// linklist.view()
-// linklist.removenode(2)
-// linklist.view()
-// linklist.Size()
-
-// linklist.removenode(3)
-// linklist.view()
-// linklist.Size()
-// linklist.view()
-// linklist.removenode(-1)
-// linklist.removenodewithspecificvalue(30)
-// linklist.view()
-//  linklist.removenodewithspecificvalue(50)
-// linklist.view()
-// linklist.removenodewithspecificvalue(40)
-// linklist.view()
-// linklist.removenodewithspecificvalue(100)
-// linklist.view()
-// linklist.removenodewithspecificvalue(20)
-// linklist.removenodewithspecificvalue2(40)
-// linklist.removenodewithspecificvalue2(400)
 linklist.view()
 
 linklist.searchlist(40)
