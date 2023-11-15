@@ -39,16 +39,35 @@ const queueoptimizeddatastracturemethods=()=>{
 
 }
 
-const circularqueuedatast4ructuremethods=()=>{
-    const circularqueue =new CircularQueue(3)
+const circular_queue_data_structure=()=>{
+    const circularqueue =new CircularQueue(4)
+    circularqueue.get()
+    circularqueue.peek()
 
     circularqueue.add(1)
+    // circularqueue.remove() 
     circularqueue.add(2)
+    circularqueue.peek()
+
+    // circularqueue.remove()
     circularqueue.add(3)
+    circularqueue.peek()
+
+    circularqueue.remove()
     circularqueue.add(4)
+    circularqueue.add(5)
+    circularqueue.add(6)
+
+     circularqueue.peek()
+
+    // circularqueue.add(5)
+    // circularqueue.add(6)
+    // circularqueue.add(7)
+    // circularqueue.add(8)
+
 }
 // stackdatastracturemethods()
 // queuedatastracturemethods()
 
 // queueoptimizeddatastracturemethods()
-circularqueuedatast4ructuremethods()
+circular_queue_data_structure()

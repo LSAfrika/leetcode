@@ -123,33 +123,54 @@ class CircularQueue{
 
 
 
-    add(element){
+    // add(element){
 
-        if(this.currentlength==this.capacity && this.queue[0]!=null)  return console.log('queue is full',this.queue)
-        if(this.currentlength==this.capacity && this.queue[0]!=null)  return console.log('queue is full',this.queue)
+    //     if(this.currentlength==this.capacity && this.queue[0]!=null)  return console.log('queue is full',this.queue)
+    //     if(this.queue[0]==null)  {this.rearpointer=-1;this.currentlength=0}
         
-            this.rearpointer++
-            this.queue[this.rearpointer]=element
-        this.currentlength++
-        return console.log('element added to queue',this.queue,'\n current length counter:',this.currentlength)
+    //     this.rearpointer++
+    //     if(this.rearpointer==0 && this.queue[this.rearpointer]!=null) this.frontpointer=0
+    //     this.queue[this.rearpointer]=element
+    //     this.currentlength++
+    //     return console.log('element added to queue',this.queue)
  
+    // }
+
+    add(element){
+if(this.full()==false){
+    this.rearpointer=(this.rearpointer+1)%this.capacity
+    this.queue[this.rearpointer]=element
+    this.currentlength++
+    if(this.frontpointer==-1)this.frontpointer=this.rearpointer
+    return console.log('add to queue: ',this.queue)
+}
+//else{
+
+    return console.log('cant add more queue is full')
+//}
     }
 
-    queueremove(){
+    remove(){
 
+       if(this.empty()==true) return console.log('dequeue: queue is empty');
+        const element =this.queue[this.frontpointer]
+        this.queue[this.frontpointer]=null
+        this.frontpointer=(this.frontpointer+1)%this.capacity
+        this.currentlength=this.currentlength-=1
+       if(this.empty()==true) {this.frontpointer=this.rearpointer=-1}
+
+        return console.log('dequeued top element: ',element);
       
     }
 
-    queuepeek(){
+    peek(){
 
-        if(this.rearpointer-this.frontpointer==0) return console.log('the queue is empty')
+        if(this.empty()==true) return console.log('peek method: the queue is empty')
 
-     
-     return console.log('queue top element: ',this.queue[this.frontpointer]);
-
+        console.log('top element in queue: ',this.queue[this.frontpointer])
     }
 
-    queueempty(){
+    empty(){
         let isempty
         if(this.currentlength==0) isempty= true
         if(this.currentlength>0)  isempty= false
@@ -160,12 +181,12 @@ class CircularQueue{
 
     }
 
-    getqueue(){
+    get(){
         return console.log('current queue: ',this.queue)
     }
 
-    queuefull(){
-        console.log('queue full: ',this.currentlength===this.capacity)
+    full(){
+        // console.log('queue full: ',this.currentlength===this.capacity)
 
         return this.currentlength===this.capacity
     }
