@@ -1,4 +1,4 @@
-const {Stack,Queue,QueueOptimized,CircularQueue}=require('./data stractures/index.datastractures')
+const {Stack,Queue,QueueOptimized,CircularQueue,LinkedList}=require('./data stractures/index.datastractures')
 
 
 
@@ -66,8 +66,30 @@ const circular_queue_data_structure=()=>{
     // circularqueue.add(8)
 
 }
+
+
+const linked_list=()=>{
+    const linklist=new LinkedList()
+
+    // console.log(linklist.linkedlistempty());
+    // console.log(linklist.linkedlistsize());
+    linklist.view()
+
+    linklist.prepend(10)
+    linklist.prepend(20)
+    linklist.prepend(30)
+
+    linklist.view()
+    linklist.append(60)
+    linklist.append(50)
+linklist.append(40)
+linklist.view()
+
+}
 // stackdatastracturemethods()
 // queuedatastracturemethods()
 
 // queueoptimizeddatastracturemethods()
-circular_queue_data_structure()
+// circular_queue_data_structure()
+
+linked_list()
