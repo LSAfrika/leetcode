@@ -73,17 +73,47 @@ const linked_list=()=>{
 
     // console.log(linklist.linkedlistempty());
     // console.log(linklist.linkedlistsize());
-    linklist.view()
+    linklist.viewlistvalues()
+    console.log('=============prepend value ==================');
 
     linklist.prepend(10)
     linklist.prepend(20)
     linklist.prepend(30)
+    linklist.viewlistvalues()
 
-    linklist.view()
+    // linklist.view()
+console.log('=============append value ==================');
+
     linklist.append(60)
     linklist.append(50)
 linklist.append(40)
-linklist.view()
+linklist.append(40)
+linklist.append(40)
+linklist.viewlistvalues()
+// linklist.insert(10,0)
+console.log('=============insert node at given index ==================');
+
+linklist.insertnode(100,1)
+linklist.viewlistvalues()
+console.log('=============delete node at given index ==================');
+
+linklist.deletenodeatgivenindex(0)
+linklist.viewlistvalues()
+linklist.linkedlistsize()
+console.log('=============delete node with given value ==================');
+
+linklist.deletenodewithgivenvalue(100)
+linklist.deletenodewithgivenvalue(40)
+linklist.viewlistvalues()
+linklist.linkedlistsize()
+console.log('=============reverse list ==================');
+linklist.reverselist()
+linklist.viewlistvalues()
+linklist.linkedlistsize()
+console.log('=============search list ==================');
+linklist.search(40)
+linklist.search(20)
+linklist.search(10)
 
 }
 // stackdatastracturemethods()

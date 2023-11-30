@@ -17,7 +17,7 @@ class LinkedList{
     }
 
      linkedlistsize(){
-        return this.size
+        return console.log('list size:',this.size);
      }
 
 
@@ -54,9 +54,11 @@ class LinkedList{
 
             currentnode.next=nodevalue
         }
+
+        this.size++
      }
 
-     view(){
+     viewlistvalues(){
         if(this.linkedlistempty()) return console.log('linkedlist is empty');
 
         let currentnode=this.head
@@ -70,9 +72,109 @@ class LinkedList{
         console.log(listvalue,'null');
      }
 
-     insert(value,index){
-        if(index<0||index>this.size) return console.log('index out of range');
+     insertnode(value,index){
+        if(index<0||index>this.size-1) return console.log('index out of range');
         if(index==0) this.prepend(value)
+
+        let currentnode=this.head
+        console.log('size: ',this.size);
+        for (let i = 0; i < this.size-1; i++) {
+            // console.log(i,index,index-1);
+            if(i==index-1){
+                // console.log('node to delete: ',currentnode.value);
+                const nodetoinsert= new node(value)
+                let nextnode=currentnode.next
+                currentnode.next=nodetoinsert
+                nodetoinsert.next=nextnode
+
+            }
+            currentnode=currentnode.next
+        }
+        this.size++
+     }
+
+     deletenodeatgivenindex(index){
+        if(index<0||index>this.size-1) return console.log('index out of range');
+
+        let currentnode=this.head
+
+        if(index==0){
+            this.head=currentnode.next
+        this.size--
+
+        return
+        }
+
+        for (let i = 0; i < this.size-1; i++) {
+            // console.log(i,index,index-1);
+            if(i==index-1){
+                
+           
+                let nodetodelete=currentnode.next
+                currentnode.next=nodetodelete.next
+            
+
+            }
+            currentnode=currentnode.next
+        }
+        this.size--
+
+     }
+
+     deletenodewithgivenvalue(value){
+        if(this.head.value==value) {this.size--;return this.head=this.head.next}
+
+        let indexnode=this.head
+
+        while(indexnode.next&&indexnode.next.value!=value){
+            indexnode=indexnode.next
+        }
+        if(indexnode.next !=null){
+
+            let nodetodelete=indexnode.next
+            indexnode.next=nodetodelete.next
+            this.size--
+
+            return
+        }
+
+        console.log(value,' is not in the list');
+     }
+
+     reverselist(){
+        let previousnode=null
+        let nextnode=null
+        let currentnode=this.head
+
+        while(currentnode){
+            //*next node of current node
+            nextnode=currentnode.next
+             //* seeting the current node pointer o previous node
+            currentnode.next=previousnode
+             //* set previous node to  current node
+            previousnode=currentnode
+            //* setting current node to next node
+            currentnode=nextnode
+
+
+        }
+        this.head=previousnode
+     }
+
+     search(value){
+        if(this.linkedlistempty())return console.log('the list is empty');
+        if(value==undefined)return console.log('value is missing')
+        let currentnode=this.head
+        let valuearray=[]
+        for (let node = 0; node < this.size; node++) {
+            // console.log(currentnode.value);
+            if(currentnode.value===value) valuearray.push(node)
+            currentnode=currentnode.next
+        }
+
+        if(valuearray.length>0) return console.log(`${value} is found ${valuearray.length} time(S) at index [${valuearray}]`)
+        if(valuearray.length==0) return console.log(`${value} is not found within the linked list `)
+
      }
 }
 
