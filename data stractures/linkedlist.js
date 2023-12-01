@@ -116,7 +116,13 @@ class LinkedList{
      }
 
      deletenodewithgivenvalue(value){
-        if(this.head.value==value) {this.size--;return this.head=this.head.next}
+        // console.log(this.head.value,value);
+        if(this.head.value==value) {
+            let deletevalue=this.head.value
+            this.head=this.head.next
+            this.size--; 
+            return console.log(`${deletevalue} has been removed from linkedlist`)
+        }
 
         let indexnode=this.head
 
@@ -187,7 +193,7 @@ console.log(reversevaluestring,'\n',this.size);
         if(value==undefined)return console.log('value is missing')
         let currentnode=this.head
         let valuearray=[]
-       console.log(this.size);
+    //    console.log(this.size);/
         for (let node = 0; node < this.size; node++) {
             // console.log(currentnode.value);
             if(currentnode.value===value) valuearray.push(node)

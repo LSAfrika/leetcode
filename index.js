@@ -97,12 +97,12 @@ console.log('=============delete node at given index ==================');
 linklist.deletenodeatgivenindex(0)
 linklist.viewlistvalues()
 linklist.linkedlistsize()
-// console.log('=============delete node with given value ==================');
+console.log('=============delete node with given value ==================');
 
-// linklist.deletenodewithgivenvalue(100)
-// linklist.deletenodewithgivenvalue(40)
-// linklist.viewlistvalues()
-// linklist.linkedlistsize()
+linklist.deletenodewithgivenvalue(100)
+linklist.deletenodewithgivenvalue(20)
+linklist.viewlistvalues()
+linklist.linkedlistsize()
 console.log('=============reverse list ==================');
 linklist.reverselist()
 
@@ -110,6 +110,7 @@ console.log('=============search list ==================');
 linklist.search(40)
 linklist.search(20)
 linklist.search(10)
+linklist.search(1000)
 
 }
 // stackdatastracturemethods()
