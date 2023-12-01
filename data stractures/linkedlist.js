@@ -77,7 +77,7 @@ class LinkedList{
         if(index==0) this.prepend(value)
 
         let currentnode=this.head
-        console.log('size: ',this.size);
+        // console.log('size: ',this.size);
         for (let i = 0; i < this.size-1; i++) {
             // console.log(i,index,index-1);
             if(i==index-1){
@@ -166,13 +166,14 @@ class LinkedList{
         if(value==undefined)return console.log('value is missing')
         let currentnode=this.head
         let valuearray=[]
+        // console.log('values length',valuearray.length);
         for (let node = 0; node < this.size; node++) {
             // console.log(currentnode.value);
             if(currentnode.value===value) valuearray.push(node)
             currentnode=currentnode.next
         }
 
-        if(valuearray.length>0) return console.log(`${value} is found ${valuearray.length} time(S) at index [${valuearray}]`)
+        if(valuearray.length>0) return console.log(`${value} found ${valuearray.length} time(s) at index [${valuearray}]`)
         if(valuearray.length==0) return console.log(`${value} is not found within the linked list `)
 
      }
