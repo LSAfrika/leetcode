@@ -76,45 +76,36 @@ const linked_list=()=>{
     linklist.viewlistvalues()
     console.log('=============prepend value ==================');
 
-    linklist.prepend(10)
     linklist.prepend(20)
     linklist.prepend(30)
-    linklist.viewlistvalues()
-
-    // linklist.view()
-console.log('=============append value ==================');
-
     linklist.append(60)
     linklist.append(50)
-linklist.append(40)
-linklist.append(40)
-linklist.append(40)
-linklist.viewlistvalues()
+    linklist.append(10)
+    linklist.append(40)
+    linklist.append(40)
+    linklist.append(40)
+    linklist.viewlistvalues()
 // linklist.insert(10,0)
 console.log('=============insert node at given index ==================');
 
 linklist.insertnode(100,1)
 linklist.viewlistvalues()
-// linklist.linkedlistsize()
+linklist.linkedlistsize()
 
 console.log('=============delete node at given index ==================');
 
 linklist.deletenodeatgivenindex(0)
 linklist.viewlistvalues()
-// linklist.linkedlistsize()
-// linklist.deletenodeatgivenindex(5)
-// linklist.viewlistvalues()
-// linklist.linkedlistsize()
-console.log('=============delete node with given value ==================');
+linklist.linkedlistsize()
+// console.log('=============delete node with given value ==================');
 
-linklist.deletenodewithgivenvalue(100)
+// linklist.deletenodewithgivenvalue(100)
 // linklist.deletenodewithgivenvalue(40)
-linklist.viewlistvalues()
+// linklist.viewlistvalues()
 // linklist.linkedlistsize()
 console.log('=============reverse list ==================');
 linklist.reverselist()
-linklist.viewlistvalues()
-// linklist.linkedlistsize()
+
 console.log('=============search list ==================');
 linklist.search(40)
 linklist.search(20)

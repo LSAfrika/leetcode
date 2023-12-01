@@ -17,7 +17,7 @@ class LinkedList{
     }
 
      linkedlistsize(){
-        return console.log('list size:',this.size);
+        return console.log('list size',this.size)
      }
 
 
@@ -27,6 +27,7 @@ class LinkedList{
         const nodevalue =new node(value)
         if(this.linkedlistempty()){
             this.head=nodevalue
+        
         }else{
 
             nodevalue.next=this.head
@@ -35,6 +36,8 @@ class LinkedList{
         }
 
         this.size++
+
+        console.log('size increase: ',this.size);
      }
 
      //ADD TO LIST FROM BACK
@@ -50,12 +53,15 @@ class LinkedList{
             let currentnode= this.head
             while(currentnode.next){
                 currentnode=currentnode.next
+
+                // console.log(currentnode);
             }
 
             currentnode.next=nodevalue
         }
-
         this.size++
+
+        console.log('append size increase: ',this.size);
      }
 
      viewlistvalues(){
@@ -69,55 +75,43 @@ class LinkedList{
             currentnode=currentnode.next
         }
 
-        console.log(listvalue,'null');
+        console.log(listvalue,'null \n',);
      }
 
      insertnode(value,index){
-        if(index<0||index>this.size-1) return console.log('index out of range');
-        if(index==0) this.prepend(value)
+        
+        if(index<0||index>this.size)  {console.log('index out of range');return;}
+        if(index==0){ this.prepend(value)}
+        if(index>0){ 
+     
 
         let currentnode=this.head
-        // console.log('size: ',this.size);
+    
         for (let i = 0; i < this.size-1; i++) {
-            // console.log(i,index,index-1);
+          
             if(i==index-1){
-                // console.log('node to delete: ',currentnode.value);
+            
                 const nodetoinsert= new node(value)
                 let nextnode=currentnode.next
                 currentnode.next=nodetoinsert
                 nodetoinsert.next=nextnode
+                this.size++
 
+                return
             }
+          
+
             currentnode=currentnode.next
-        }
-        this.size++
-     }
-
-     deletenodeatgivenindex(index){
-        if(index<0||index>this.size-1) return console.log('index out of range');
-
-        let currentnode=this.head
-
-        if(index==0){
-            this.head=currentnode.next
-        this.size--
-
-        return
-        }
-
-        for (let i = 0; i < this.size-1; i++) {
-            // console.log(i,index,index-1);
-            if(i==index-1){
-                
            
-                let nodetodelete=currentnode.next
-                currentnode.next=nodetodelete.next
-            
-
-            }
-            currentnode=currentnode.next
+        
         }
-        this.size--
+    
+
+
+
+    }
+    console.log('size increase insert; ',this.size);
+        
 
      }
 
@@ -141,39 +135,69 @@ class LinkedList{
         console.log(value,' is not in the list');
      }
 
+     deletenodeatgivenindex(index){
+        if(index<0||index>this.size)  {console.log('index out of range');return;}
+        if(index==0){
+            this.head=this.head.next;
+            this.size--;
+            return
+        }
+
+        let currentnode=this.head
+        let nextnode=null
+        for (let i = 0; i < this.size; i++) {
+            
+            if(i==index-1){
+                
+                nextnode=current.next
+                currentnode.next=nextnode.next
+                return
+            }
+            currentnode=currentnode.next
+
+        }
+        this.size--
+     }
+
      reverselist(){
         let previousnode=null
         let nextnode=null
         let currentnode=this.head
+        let reversevaluestring='null  '
+       // console.log(reversevaluestring);
 
         while(currentnode){
-            //*next node of current node
             nextnode=currentnode.next
-             //* seeting the current node pointer o previous node
             currentnode.next=previousnode
-             //* set previous node to  current node
             previousnode=currentnode
-            //* setting current node to next node
             currentnode=nextnode
+            reversevaluestring+='<-- '+previousnode.value+' '
+            
+        }
+this.head=previousnode
+console.log(reversevaluestring,'\n',this.size);
 
 
         }
-        this.head=previousnode
-     }
+     //   this.head=previousnode
+     //}
 
      search(value){
         if(this.linkedlistempty())return console.log('the list is empty');
         if(value==undefined)return console.log('value is missing')
         let currentnode=this.head
         let valuearray=[]
-        // console.log('values length',valuearray.length);
+       console.log(this.size);
         for (let node = 0; node < this.size; node++) {
             // console.log(currentnode.value);
             if(currentnode.value===value) valuearray.push(node)
             currentnode=currentnode.next
+      
+            
         }
+     
 
-        if(valuearray.length>0) return console.log(`${value} found ${valuearray.length} time(s) at index [${valuearray}]`)
+        if(valuearray.length>0) return console.log(`${value} is found ${valuearray.length} time(S) at index [${valuearray}]`)
         if(valuearray.length==0) return console.log(`${value} is not found within the linked list `)
 
      }
