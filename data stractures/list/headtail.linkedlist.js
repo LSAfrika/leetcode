@@ -60,6 +60,8 @@ class headtaillinklist{
 
 
     print(){
+
+        if(this.isEmpty()) return console.log('this list is empty');
         let currentnode=this.head
         let listvalues=''
         while (currentnode) {
@@ -122,6 +124,34 @@ class headtaillinklist{
         }
 
 
+    }
+
+    stackremove(){
+        if(this.isEmpty()) return console.log('stack is empty');
+        if(this.size==1)
+        {
+             this.head=this.tail=null
+        }else{
+
+            this.head=this.head.next
+        }
+
+        this.size--
+    }
+
+    queueremove(){
+        if(this.isEmpty()) return console.log('queue is empty');
+        let currentnode=this.head
+        while (currentnode.next!=this.tail) {
+            currentnode=currentnode.next
+        }
+        currentnode.next=null
+        this.tail=currentnode
+        this.size--
+
+    }
+    listsize(){
+        return this.size
     }
 }
 

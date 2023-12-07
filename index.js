@@ -1,4 +1,11 @@
-const {Stack,Queue,QueueOptimized,CircularQueue,LinkedList,headtaillinklist}=require('./data stractures/index.datastractures')
+const {
+    Stack,Queue,
+    QueueOptimized,
+    CircularQueue,
+    LinkedList,
+    headtaillinklist,queuelinklist,stacklinklist
+}
+    =require('./data stractures/index.datastractures')
 
 
 
@@ -154,10 +161,45 @@ const headtaillist=()=>{
 
 }
 
+const linklistqueue=()=>{
+
+    const queuedatastracture= new queuelinklist()
+
+    queuedatastracture.isempty()
+    queuedatastracture.print()
+    queuedatastracture.add(10)
+    queuedatastracture.add(20)
+    queuedatastracture.add(30)
+    queuedatastracture.print()
+    queuedatastracture.peek()
+    queuedatastracture.remove()
+    queuedatastracture.print()
+    queuedatastracture.peek()
+}
+const linkliststack=()=>{
+
+    const stackdatastracture= new stacklinklist()
+
+    stackdatastracture.isempty()
+    stackdatastracture.print()
+    stackdatastracture.add(10)
+    stackdatastracture.add(20)
+    stackdatastracture.add(30)
+    stackdatastracture.print()
+    stackdatastracture.peek()
+    stackdatastracture.remove()
+    stackdatastracture.print()
+    stackdatastracture.peek()
+}
+
 //linked_list()
 
-headtaillist()
+//headtaillist()
+console.log('\n ==================link list queue======================\n');
 
+linklistqueue()
+console.log('\n ==================link list stack======================\n');
+linkliststack()
 
 // stackdatastracturemethods()
 // queuedatastracturemethods()
