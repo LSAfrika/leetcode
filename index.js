@@ -117,7 +117,7 @@ linklist.search(1000)
 const headtaillist=()=>{
     const htlist= new headtaillinklist()
 
-    console.log('=======================check empty list========================')
+    console.log('\n=======================check empty list========================\n')
    console.log('is list empty?: ', htlist.isEmpty())
 
 
@@ -127,7 +127,7 @@ const headtaillist=()=>{
     htlist.append(30)
     htlist.append(20)
     htlist.append(10)
-    console.log('=======================preview apped list========================')
+    console.log('\n=======================preview apped list========================\n')
     htlist.print()
 
     htlist.prepend(50)
@@ -135,18 +135,18 @@ const headtaillist=()=>{
     htlist.prepend(70)
     htlist.prepend(80)
     htlist.prepend(80)
-    console.log('=======================preview preapped list========================')
+    console.log('\n=======================preview preapped list========================\n')
     htlist.print()
     htlist.searchvalue(80)
     htlist.searchvalue(90)
-    console.log('=======================preview reverse node values list========================')
+    console.log('\n=======================preview reverse node values list========================\n')
     htlist.reverselist()
-    console.log('=======================link list search ========================')
+    console.log('\n=======================link list search ========================\n')
     htlist.searchvalue(80)
     htlist.searchvalue(90)
 
-    console.log('=======================value at given index ========================')
-htlist.print()
+    console.log('\n=======================value at given index ========================\n')
+    htlist.print()
     htlist.valueatgivenindex(5)
     htlist.valueatgivenindex(10)
 
