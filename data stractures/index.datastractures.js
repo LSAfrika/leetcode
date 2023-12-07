@@ -5,6 +5,7 @@ const Stack= require('./stack')
 const {Queue,QueueOptimized,CircularQueue}=require('./queue')
 
 const {LinkedList}=require('./list/linkedlist')
+const {headtaillinklist}=require('./list/headtail.linkedlist')
 module.exports={
-    Queue,QueueOptimized,CircularQueue,Stack,LinkedList
+    Queue,QueueOptimized,CircularQueue,Stack,LinkedList,headtaillinklist
 }

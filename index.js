@@ -1,4 +1,4 @@
-const {Stack,Queue,QueueOptimized,CircularQueue,LinkedList}=require('./data stractures/index.datastractures')
+const {Stack,Queue,QueueOptimized,CircularQueue,LinkedList,headtaillinklist}=require('./data stractures/index.datastractures')
 
 
 
@@ -113,10 +113,54 @@ linklist.search(10)
 linklist.search(1000)
 
 }
+
+const headtaillist=()=>{
+    const htlist= new headtaillinklist()
+
+    console.log('=======================check empty list========================')
+   console.log('is list empty?: ', htlist.isEmpty())
+
+
+    // console.log('======================= apped list========================')
+
+    htlist.append(40)
+    htlist.append(30)
+    htlist.append(20)
+    htlist.append(10)
+    console.log('=======================preview apped list========================')
+    htlist.print()
+
+    htlist.prepend(50)
+    htlist.prepend(60)
+    htlist.prepend(70)
+    htlist.prepend(80)
+    htlist.prepend(80)
+    console.log('=======================preview preapped list========================')
+    htlist.print()
+    htlist.searchvalue(80)
+    htlist.searchvalue(90)
+    console.log('=======================preview reverse node values list========================')
+    htlist.reverselist()
+    console.log('=======================link list search ========================')
+    htlist.searchvalue(80)
+    htlist.searchvalue(90)
+
+    console.log('=======================value at given index ========================')
+htlist.print()
+    htlist.valueatgivenindex(5)
+    htlist.valueatgivenindex(10)
+
+
+
+}
+
+//linked_list()
+
+headtaillist()
+
+
 // stackdatastracturemethods()
 // queuedatastracturemethods()
 
 // queueoptimizeddatastracturemethods()
 // circular_queue_data_structure()
-
-linked_list()
