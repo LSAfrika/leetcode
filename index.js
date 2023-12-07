@@ -3,7 +3,7 @@ const {
     QueueOptimized,
     CircularQueue,
     LinkedList,
-    headtaillinklist,queuelinklist,stacklinklist
+    headtaillinklist,queuelinklist,stacklinklist, Doublylinklist
 }
     =require('./data stractures/index.datastractures')
 
@@ -74,6 +74,26 @@ const circular_queue_data_structure=()=>{
 
 }
 
+const doublelinklist=()=>{
+    const doublylist= new Doublylinklist()
+
+    doublylist.print()
+    console.log('doubly link list size: ',doublylist.listsize());
+
+    doublylist.append(30)
+    doublylist.append(20)
+    doublylist.append(10)
+    doublylist.print()
+    doublylist.prepend(40)
+    doublylist.prepend(50)
+    doublylist.prepend(60)
+    doublylist.print()
+    console.log('\n====================head node inspection====================\n');
+    console.log('head value: ',doublylist.head.value ,'\n head previous: ',doublylist.head.previous?.value||null,'\n head next: ',doublylist.head.next.value);
+    console.log('\n====================tail node inspection====================\n');
+    
+    console.log('tail value: ',doublylist.tail.value ,'\n tail previous: ',doublylist.tail.previous.value,'\n tail next: ',doublylist.tail.next?.value||null);
+}
 
 const linked_list=()=>{
     const linklist=new LinkedList()
@@ -195,11 +215,12 @@ const linkliststack=()=>{
 //linked_list()
 
 //headtaillist()
-console.log('\n ==================link list queue======================\n');
+doublelinklist()
+// console.log('\n ==================link list queue======================\n');
 
-linklistqueue()
-console.log('\n ==================link list stack======================\n');
-linkliststack()
+// linklistqueue()
+// console.log('\n ==================link list stack======================\n');
+// linkliststack()
 
 // stackdatastracturemethods()
 // queuedatastracturemethods()

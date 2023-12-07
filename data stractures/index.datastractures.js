@@ -8,6 +8,7 @@ const {LinkedList}=require('./list/linkedlist')
 const {headtaillinklist}=require('./list/headtail.linkedlist')
 const {queuelinklist}=require('./list/queue.linklist')
 const {stacklinklist}=require('./list/stack.linklist')
+const {Doublylinklist}=require('./list/doubly.linklist')
 module.exports={
-    Queue,QueueOptimized,CircularQueue,Stack,LinkedList,headtaillinklist,queuelinklist,stacklinklist
+    Queue,QueueOptimized,CircularQueue,Stack,LinkedList,headtaillinklist,queuelinklist,stacklinklist,Doublylinklist
 }
