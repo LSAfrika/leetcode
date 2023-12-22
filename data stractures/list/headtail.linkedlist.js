@@ -13,17 +13,13 @@ class headtaillinklist{
     }
 
 
-    isEmpty(){
-       
-
-        return this.size===0
-    }
+    isEmpty(){ return this.size===0 }
 
     prepend(value){
 
         const newnode= new Node(value)
 
-        if(this.isEmpty())
+        if(this.isEmpty()==true)
         {this.head=this.tail=newnode;}
 
         else{
