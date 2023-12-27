@@ -1,0 +1,53 @@
+this is a hierachical data stratcture where we have nodes connected by edges
+a tree is a non linear data stracture due to its nature data fetching cant be linear 
+a visualization
+
+                    10  <--- root node
+                   /  \
+                  /    \
+                 5      15 <--- root node (subroot)
+                / \     / \
+               3   7   10 20  <--- leaf node
+
+======usages=======:
+file directory structure
+family tree
+an organization tree
+the dom
+
+======common terminologies=======:
+ROOT NODE: this is the intial node within a tree and it must bhave children for it to be a root 10,5,15
+LEAF NODES: this are nodes that do not have nodes connected to anything in the above tree 3,7,10,20
+SIBLING NODES: these are the nodes that share the same parent eg: 5,15 are sibling nodes while 3,7,10,20 are also siblings
+ANCESTOR  NODES: this is like a grand child/parent relationship eg: 10 is an ancestor to 3,7,10,20
+PATH: this is the route use to move from one node to another path from 10 to 3 is 10-->5-->3
+DISTANCE: this is the distance moved interms of depth from one node to another distance between 10 to 3 is 2
+
+NODE DEGREE: this is the total number of child nodes od a node eg: the degree of 5 is 2
+TREE DEREE: this is max degree of a node in a tree the tree degree of above tree is 2 since its a binary tree
+
+TREE DEPTH: this is the deepest node in a tree the above tree depth is 2
+NODE DEPTH: this is the amount of edges of a node from the root depth of 5 is 1 while depth of 20 is 2. the root node depth is always 0\
+
+
+NODE DEGREES: this is defined as
+
+
+======binary search tree properties=======
+as the name suggests each node in the tree has a max of 2 edges 
+a principle of a BST is the left node is always smaller than the root node while the right node is greater than the root node of each 
+subsequent depth example the above tree 
+
+main functionality within a tree include:
+1 insertion         - adding a value to the tree
+2.search            - find a given value within the BST
+3.tree traversal    - traversing the tree and returning all values 
+                        there are 2 kins of tree traversal DFS(depth first search) or BSF(breathe first search)
+                        DFS- is further broken down into three techniques 1.preorder 2.inorder 3,postorder
+
+4.deletion          - removal of a node given its value
+
+
+MAIN USAGE OF BST: searching, sorting, implimentation of abstract data structures such as lookup tables and priority queues
+
+
