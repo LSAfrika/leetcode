@@ -1,35 +1,32 @@
 function three(arr){
 
-    if(!arr.length) return console.log('array is empty');
-    let heap={
-        largest:0,
-        larger:0,
-        large:0
-    }
-let largestnum,largernum,largenum
-    for (i=0;i<arr.length;i++) {
-     if(i==0)  heap.largest=arr[i]
-     
-     if(i==1) heap.larger=arr[i]
+    let heap=new Array(3)
 
-     
-     if(i==2)heap.large=arr[i]
-console.log('before:',heap);
-     if(heap.largest<arr[i]){
-        largestnum=heap.largest
-        heap.largest=arr[i]
-        if(heap.larger!=0){largernum=heap.larger;heap.larger=largestnum}
-        
-     
+    for(value of arr){
+
+        if(!heap[0]||heap[0]<value){
+            heap[2]=heap[1]
+            heap[1]=heap[0]
+            heap[0]=value
+
+        }else  if(!heap[1]||heap[1]<value){
+            heap[2]=heap[1]
+            heap[1]=value
+
+
+        }
+        else  if(!heap[2]||heap[2]<value){
+            heap[2]=value
+        }
     }
+
+
+
+
+    console.log(heap)
 }
 
 
-
-    console.log('after: ',heap)
-}
-
-// three([10,2,3,4,5,6])
 
 function returnprevious(arr,val){
 
@@ -41,4 +38,4 @@ function returnprevious(arr,val){
     }
 }
 
-returnprevious([1,2,3,4,5,6,7],5)
+three([1,2,3,4,5,6,7])

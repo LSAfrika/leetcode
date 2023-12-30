@@ -13,62 +13,30 @@
 //  *     it with the endtime of the current itteration
 //  * 
 //  */
-// function meetingrooms(meetings){
-    
-//     if(meetings.length<2) return console.log('1 meeting room required');
-
-//     meetings.sort((a,b)=>a[0]-b[0])
-
-//     let roomtime=[meetings[0][1]]
-   
 
 
-    
 
-//     for(meetingindex=1;meetingindex<meetings.length;meetingindex++){
-
-//     let[starttime,endtime]=[...meetings[meetingindex]]
-
-//     let earliestavailableroom=Math.min(...roomtime)
-
-//     if (starttime<earliestavailableroom) {
-//         roomtime.push(endtime)
-        
-//     }else{
-//         roomtime[roomtime.indexOf(earliestavailableroom)]=endtime
-//     }
-//     }
-
-//     console.log('sorted meetings by start time: ',meetings)
-//     console.log('rooms created ',roomtime.length)
-    
-// }
-
-meetingroomsII([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
-meetingroomsII([[13,14],[1,5],[6,7],[8,9],[10,12]])
-meetingroomsI([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
-meetingroomsI([[1,5],[6,7],[8,9],[10,12],[13,14]])
 
 
 function meetingroomsII(meetingtimes){
     if(meetingtimes.length==1)return console.log('no of meeting rooms: ',meetingtimes.length);
 meetingtimes.sort((a,b)=>{return a[0]-b[0]})
-//get the endtime of earliest meeting 
+//get the endtime of earliest meeting and store it in the rooms array to get number of rooms
     let rooms =[meetingtimes[0][1]]
     let starttime=0
     let endtime=1
        //  let [currentmeetingstarttime,currentmeetingendtime]=[...meetingtimes[i]]
-  //  we begin at 1 since the fist meetin has been assigned to room container array
+       //  we begin at 1 since the fist meetin has been assigned to room container array
     for (let meetingindex = 1; meetingindex < meetingtimes.length; meetingindex++) {
    
         let currentmeetingstarttime=meetingtimes[meetingindex][starttime]
         let currentmeetingendtime=meetingtimes[meetingindex][endtime]
-        let earliestroomavailable=Math.min(...rooms)
+        let earliestmeetingendtime=Math.min(...rooms)
 
-        if(earliestroomavailable>currentmeetingstarttime){
+        if(earliestmeetingendtime>currentmeetingstarttime){
             rooms.push(currentmeetingendtime)
         }else{
-            rooms[rooms.indexOf(earliestroomavailable)]=currentmeetingendtime
+            rooms[rooms.indexOf(earliestmeetingendtime)]=currentmeetingendtime
         }
 
 
@@ -94,3 +62,8 @@ function meetingroomsI(meetingtimes){
 
     console.log('all meetings are attendable');
 }
+
+meetingroomsII([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
+meetingroomsII([[13,14],[1,5],[6,7],[8,9],[10,12]])
+meetingroomsI([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
+meetingroomsI([[1,5],[6,7],[8,9],[10,12],[13,14]])
