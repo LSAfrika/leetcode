@@ -52,7 +52,26 @@ function perfectsquareII(target){
 
     console.log(target,' is not a perfect square');
 }
-perfectsquareII(10000)
-perfectsquareI(10000)
 
+function perfectsquarerecurse(target) {
+
+    let largest=Math.floor(target/2)
+    let least=1
+     squarerecurse(least,largest,target)
+    
+}
+
+function squarerecurse(start,end,target){
+    if(start>end)return console.log(target,' is not a perfect square');
+
+    let midpoint=Math.floor((start+end)/2)
+
+    if((midpoint*midpoint)==target) return console.log(target,' is  a perfect square');
+
+    if((midpoint*midpoint)>target) return squarerecurse(start,midpoint-1,target)
+    if((midpoint*midpoint)<target) return squarerecurse(midpoint+1,end,target)
+}
+//perfectsquareII(10000)
+//perfectsquareI(10000)
+perfectsquarerecurse(160000)
 // IMPLIMENT IT WITH RECCURSION
