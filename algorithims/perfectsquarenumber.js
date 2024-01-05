@@ -30,29 +30,21 @@ function perfectsquareII(target){
     //we attain half og the target since any  number greater than half then squared shall 
     //be greater than the target
     const halftarget=Math.floor(target/2)
-    //console.log(halftarget);
+  
     startpoint=1
     endpoint=halftarget
     midpoint=0
-    searching=true
+ 
     while(startpoint<=endpoint){
 
-        // searching=false
         let midpoint=Math.floor((startpoint+endpoint)/2)
-        //helps trace the values at each itteration
-        console.log('start:',startpoint,'mid:',midpoint,'end',endpoint);
+        //helps trace the values at each iteration
+        //console.log('start:',startpoint,'mid:',midpoint,'end',endpoint);
         // if(startpoint>endpoint)return console.log(target, ' is not a perfect square')
 
         if((midpoint*midpoint)==target){return console.log(target, ' is a perfect square')}
-        else if((midpoint*midpoint)<target){
-
-            startpoint=midpoint+1
-            //  searching=true
-        }
-        else  if((midpoint*midpoint)>target){ 
-            endpoint=midpoint-1
-            // searching=true
-        }
+        if((midpoint*midpoint)<target){startpoint=midpoint+1}
+        if((midpoint*midpoint)>target){endpoint=midpoint-1  }
 
 
 
@@ -60,6 +52,7 @@ function perfectsquareII(target){
 
     console.log(target,' is not a perfect square');
 }
-perfectsquareII(10500)
+perfectsquareII(10000)
+perfectsquareI(10000)
 
 // IMPLIMENT IT WITH RECCURSION
