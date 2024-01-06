@@ -106,9 +106,37 @@ function chunked(nums,size) {
     return console.log(mainarray);
 } 
     
+function trilargest(nums){
+    if(nums.length<3) return console.log('array smaller than 3');
+
+    let triple= new Array(3)
+
+    for (const num of nums) {
+        
+        if(!triple[0]||triple[0]<num){
+
+            triple[2]=triple[1]
+            triple[1]=triple[0]
+            triple[0]=num
+        }     
+        else  if(!triple[1]||triple[1]<num){
+  
+            triple[2]=triple[1]
+            triple[1]=num
+        }
+             
+        else  if(!triple[2]||triple[2]<num){
+            triple[2]=num
+        }
 
 
-chunked([1,1,2,2,3,3,4,5,6,7,7,8,9,0,8,7],10)
+    }
+
+    return console.log(triple);
+}
+
+//chunked([1,1,2,2,3,3,4,5,6,7,7,8,9,0,8,7],10)
+trilargest([100,2,30,4,51,6,7])
 
 // firstuniquechar('sdwefdfdrewswerfgtyh')
 // firstuniquechar('')
