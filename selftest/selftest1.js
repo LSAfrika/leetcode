@@ -85,16 +85,13 @@ function firstuniquechar(s){
 function chunked(nums,size) {
     if(nums.length<size) return console.log('size is greater than array');
     // get the modulus of the array
-    let lastchunksize=0
-    let lastchunk=[]
+   
+   
     let chunks=[]
     let mainarray=[]
     counter=0
-    if(nums.length%size !==0)lastchunksize= nums.length%size
-    console.log('chunk size: ',lastchunksize);
-    if(lastchunksize>0)lastchunk=nums.splice(nums.length-lastchunksize)
 
-console.log('last chunk: ',lastchunk);
+
 
     for ( num of nums) {
         counter++
@@ -104,18 +101,18 @@ console.log('last chunk: ',lastchunk);
         
     }
 
-    if(lastchunk.length>0)mainarray.push(lastchunk)
+    if(chunks.length>0)mainarray.push(chunks)
 
     return console.log(mainarray);
 } 
     
 
 
-//chunked([1,1,2,2,3,3,4,5,6,7,7,8,9,0,8,7],10)
+chunked([1,1,2,2,3,3,4,5,6,7,7,8,9,0,8,7],10)
 
 // firstuniquechar('sdwefdfdrewswerfgtyh')
 // firstuniquechar('')
 // firstuniquechar('sdwefdfdrewswer')
 // meetingroomsI([[6,8],[1.3],[2,3],[4,5]])
-meetingroomsII([[6,8],[1,3],[3,12],[4,15],[2,3],[4,5]])
-meetingroomsII([[6,8],[1,3],[4,5]])
+//meetingroomsII([[6,8],[1,3],[3,12],[4,15],[2,3],[4,5]])
+//meetingroomsII([[6,8],[1,3],[4,5]])
