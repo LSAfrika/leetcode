@@ -135,8 +135,66 @@ function trilargest(nums){
     return console.log(triple);
 }
 
+function closealldivs(s){
+    let result=""
+    let stringarray= s.toLowerCase().trim().split('')
+
+    
+    counter=0
+   
+   for(index=0;index<stringarray.length;index++){
+      // result+=char
+     
+    if(stringarray[index]=='<'&&stringarray[index+1]=='d'&&
+       stringarray[index+2]=='i'&&stringarray[index+3]=='v'&&
+       stringarray[index+4]=='>')
+       {
+        
+        counter++
+       result+='<'
+         
+           if(counter%2==0)result+='/div>',index=index+4
+           
+         //  console.log(counter,' cut string:',cut,' next char: ',divs);
+            
+  
+    }else{
+
+        result+=stringarray[index]
+    }
+
+    };
+
+   console.log(s,'\n\n',result);
+}
+
+
+
+
+    
+
+
+function sortarray(nums){
+    if(nums.length<2) return nums
+    
+    let pivot=nums[nums.length-1]
+    let left=[]
+    let right=[]
+ 
+
+    for ( val of nums) {
+        if(val>pivot) right.push(val)
+      if(val<pivot) left.push(val)
+      
+  }
+
+    return [...sortarray(left),pivot,...sortarray(right)]
+}
+
+
+console.log(sortarray([7,5,6,4,3,2,10]))
 //chunked([1,1,2,2,3,3,4,5,6,7,7,8,9,0,8,7],10)
-trilargest([100,2,30,4,51,6,7])
+//trilargest([100,2,30,4,51,6,7])
 
 // firstuniquechar('sdwefdfdrewswerfgtyh')
 // firstuniquechar('')
@@ -144,3 +202,7 @@ trilargest([100,2,30,4,51,6,7])
 // meetingroomsI([[6,8],[1.3],[2,3],[4,5]])
 //meetingroomsII([[6,8],[1,3],[3,12],[4,15],[2,3],[4,5]])
 //meetingroomsII([[6,8],[1,3],[4,5]])
+
+
+//closealldivs(`  
+//<div><h1 class="maintitle">Orders</h1><div><div><div> <span>order:</span>  {{order._id}}<div><div> <span>status:</span> {{order.orderstatus}}<div><div>{{order.created|date:'short'}}<div><button (click)="openorder(i)">view</button><div>`)
