@@ -266,7 +266,7 @@ link.reverselistprint
 //  console.log(link.tail.previous);
 link.print
 // link.deletevalue(50)
-// link.reverselistprint
+link.reverselistprint
 // link.insertatindex(3,100)
  link.insertatindex(6,100)
  link.insertatindex(6,1100)
