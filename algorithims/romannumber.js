@@ -34,3 +34,35 @@ console.log(intnum)
 }
 
 romannumber('mdcdl')
+
+//TEST 1
+
+function romannumbertestI(num){
+    let romanmap={
+        I:1,V:5, X:10, L:50, C:100, D:500, M:1000
+        
+    }
+    let result=0
+    num=num.toUpperCase()
+    for(i=0;i<num.length;i++){
+        let currentnum  =romanmap[num[i]]
+        let nextnum     =romanmap[num[i+1]]
+
+        if(nextnum>currentnum){
+            result+=(nextnum-currentnum)
+            i++
+        }else{
+            result+=currentnum
+
+        }
+    }
+
+    console.log(result);
+}
+
+romannumbertestI('xiv')
+
+
+
+
+

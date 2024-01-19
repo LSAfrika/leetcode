@@ -67,3 +67,36 @@ meetingroomsII([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
 meetingroomsII([[13,14],[1,5],[6,7],[8,9],[10,12]])
 meetingroomsI([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
 meetingroomsI([[1,5],[6,7],[8,9],[10,12],[13,14]])
+
+
+
+
+// revising medium meeting rooms
+
+function meetingroomsTestI(meetings){
+    meetings=meetings.sort((a,b)=>a[0]-b[0])
+    let currentmeetingendtime=meetings[0][1]
+    let meetingrooms=[]
+    meetingrooms.push(currentmeetingendtime)
+
+    for(meetingtimes=1;meetingtimes<meetings.length;meetingtimes++){
+
+        let [starttime,endtime]=[...meetings[meetingtimes]]
+
+        if(currentmeetingendtime>starttime){
+            meetingrooms.push(endtime)
+        }else{
+            let earliestmeetingendtime=Math.min(...meetingrooms)
+            let currentendindex=meetingrooms.indexOf(earliestmeetingendtime)
+            meetingrooms[currentendindex]=endtime
+        }
+
+    }
+
+    return console.log('rooms required for all meetings: ',meetingrooms.length);
+}
+
+
+meetingroomsTestI([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
+meetingroomsTestI([[13,14],[1,5],[6,7],[8,9],[10,12]])
+

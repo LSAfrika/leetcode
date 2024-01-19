@@ -59,7 +59,30 @@ for(i=0;i<nums.length;i++){
     
 }
 
+
+function numberselftest(nums){
+  nums=nums.sort((a,b)=>a-b)
+let unique=0
+  console.log(nums);
+  for(i=0;i<nums.length;i++){
+    let current   =nums[i]
+    let next      =nums[i+1]
+    let nextnext  =nums[i+2]
+    console.log('index',i,'\n',current,next,nextnext);
+
+    if(current==next&&next==nextnext){i=i+2}
+    else{ 
+      unique=current
+    //  return console.log(current);
+    }
+  }
+
+  console.log(unique);
+}
+
+
 oneuniquenumberII([1,1,1,2,2,2,-2,-2,-2,6,5,5,7,7,5,9,9,8,7,8,8,9])
+numberselftest([1,1,1,2,2,2,-2,-2,-2,6,5,5,7,7,5,9,9,8,7,8,8,9])
 
 
 

@@ -20,7 +20,7 @@ function addone(nums){
     let lastindex=nums.length-1
     let lastindexvalue= nums[lastindex]+1
     if(lastindexvalue==10){
-``
+
         while(lastindexvalue>=10){
             
          
@@ -53,5 +53,40 @@ function addone(nums){
 
 }
 
-addone([1,9,9])
-addone([1,9,8])
+
+// atempt 2 to retest skill
+function add(nums){
+
+   
+
+    for(i=nums.length-1;i>=0;i--){
+
+        // console.log('current index:', i);
+        let sum= nums[i]+1
+
+   
+
+        if(sum==10){
+          
+            nums[i]=0
+
+            if(nums[0]==0) nums.unshift(1)
+          
+
+        }else{
+
+            nums[i]=sum
+
+            break
+        }
+
+        // console.log(nums[i]);
+
+    }
+
+    console.log(nums);
+}
+
+add([9,9,9])
+ add([1,9,8])
+ add([1,6,9,9])

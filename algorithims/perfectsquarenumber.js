@@ -72,8 +72,8 @@ function squarerecurse(start,end,target){
     if((midpoint*midpoint)<target) return squarerecurse(midpoint+1,end,target)
 }
 //perfectsquareI(12000)
-perfectsquarerecurse(160000)
-perfectsquareII(160000)
+// perfectsquarerecurse(160000)
+// perfectsquareII(160000)
 // IMPLIMENT IT WITH RECCURSION
 
 
@@ -109,3 +109,59 @@ function squarerecurseI(start,end,target){
     if((midpoint*midpoint)<target)  return squarerecurse(midpoint-1,end,target)
 
 }
+
+
+////////////////// self test 1 \\\\\\\\\\\\\\\\\\\\\\\\\\
+
+//easy O(n)
+
+function squaretestI(num) {
+
+    let halfofnum=Math.floor(num/2)
+
+    let start=1
+    
+    while (start<halfofnum) {
+
+        if((start*start)==num) return console.log(num,' is a perfect square');
+        start++
+    }
+
+    console.log(num,' is not a petrfect square');
+    
+}
+
+squaretestI(160)
+
+
+//medium difficulty using reccursion O(logn)
+
+
+function mediumsquare(num){
+
+    let halfofnum=Math.floor(num/2)
+
+    square(num,1,halfofnum)
+
+}
+
+function square(num,start,end){
+
+    if(start>end) return console.log(num,' is not a perfect square');
+
+    let midpoint=Math.floor((start+end)/2)
+
+    if((midpoint*midpoint)==num) return console.log(num,' is a perfect square');
+    if((midpoint*midpoint)>num) return square(num,start,midpoint-1)
+    if((midpoint*midpoint)<num) return square(num,midpoint+1,end)
+
+
+}
+
+mediumsquare(10000)
+
+
+
+
+
+

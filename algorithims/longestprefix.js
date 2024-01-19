@@ -83,3 +83,49 @@ function longestprefix(words) {
 
 
  longestprefix(['flour','floor','flower','flow','flew','flame'])
+
+
+
+ function longestprefixtest(words){
+
+    console.log(words);
+    words=words.sort((word1,word2)=>word1.length-word2.length)
+    console.log(words);
+
+    let firstword=words[0]
+    let currentlength=firstword.length
+    let prefix=''
+
+    for(i=1;i<words.length;i++){
+
+        let currentword=words[i]
+        let counter=0
+        if(firstword[0]!==currentword[0]) return console.log('no prefix found');
+
+        while(counter<currentlength){
+            
+            if(currentword[counter]==firstword[counter]){
+
+             if(prefix[counter]!=currentword[counter])prefix+=currentword[counter]
+
+            }else{
+
+                currentlength=prefix.length
+            }
+            counter++
+
+
+        }
+
+
+
+
+
+    }
+
+
+    console.log(prefix);
+
+ }
+
+ longestprefixtest(['flour','floor','flower','flow','floew','floame','dsf'])

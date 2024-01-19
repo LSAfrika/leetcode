@@ -37,4 +37,40 @@ console.log();
 
 }
 mostrepeat('sdfsferwfdgteyrtgdsaswe////etrrgfgio088676')
-mostrepeat('*&^%$#@@!%$6890-////088676')
+// mostrepeat('*&^%$#@@!%$6890-////088676')
+
+
+// SELF TEST 1\\
+function mostrepeattestI(word){
+if(word.length<1) return console.log('empty string -1');
+
+let charmap={}
+let char=''
+let count=0
+
+for(letter of word){
+
+
+    if((/[a-zA-Z]/).test(letter)==false) continue
+
+        if(charmap[letter]!=undefined){
+            charmap[letter]=charmap[letter]+1
+            if(charmap[letter]>count){
+                count=charmap[letter]
+                char=letter
+            }
+        }else{
+    
+            // if(count==0)count=1
+            charmap[letter]=1
+        }
+    
+
+}
+
+console.log(char,count);
+
+
+}
+
+mostrepeattestI('sdfsferwfdgteyfrrrrrrtgdsaswe////etrrgfgio088676')

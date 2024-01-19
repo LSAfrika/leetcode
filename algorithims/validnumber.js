@@ -18,13 +18,14 @@
 function validnumber(s) {
     
     let nums=['1','2','3','4','5','6','7','8','9','0','.']
+    console.log('before: ',s);
 
     while(s[0]==' '){
         let array=s.split('')
         array.splice(0,1)
         s=array.join('')
     }
-    console.log(s);
+    console.log('after : ',s.split(''));
 
     for (i=0;i<s.length;i++){
 
@@ -66,5 +67,5 @@ let array
     return console.log(s);
 
 }
-validnumber('    0. 23 ')
-// splicenum('    0.23 ')
+validnumber('    0.23 ')
+// splicenum('    0.23 ') 

@@ -77,8 +77,11 @@ Tsum.add(1)
 Tsum.add(2)
 Tsum.add(3)
 Tsum.add(4)
+Tsum.add(5)
+Tsum.add(6)
+Tsum.add(7)
 Tsum.viewhashtable()
-Tsum.find(8)
+Tsum.find(4)
 Tsum.find(7)
 
 

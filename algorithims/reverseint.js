@@ -42,4 +42,55 @@ if(isnegativenum==true) reversenum=reversenum*-1
 
 }
 
-reverseint(-522)
+//reverseint(-522)
+
+//easy
+function reverseinttestI(num) {
+let copynum=num
+    if(num<0)copynum*-1
+ 
+    let reversenum=parseInt(copynum.toString().split('').reverse().join(''))
+
+    if(num<0)reversenum=reversenum*-1
+
+    console.log(num,':',reversenum);
+
+    
+}
+reverseinttestI(522)
+
+//medium
+function reverseinttestII(num) {
+
+    let copynum=num
+if(copynum<0)copynum=copynum*-1
+    let modulus=0
+    let  numsarray=[]
+
+    while (modulus<copynum) {
+
+        modulus=copynum%10
+        if(modulus!==copynum){
+            numsarray.push(modulus)
+            numsarray=numsarray.map(num=>num*10)
+            copynum=Math.floor(copynum/10)
+
+        }else{
+            numsarray.push(copynum)
+        }
+        
+    }
+
+    let reverseint=numsarray.reduce((total,acc)=>total+acc)
+
+if(num<0)reverseint=reverseint*-1
+
+
+console.log(num,":",reverseint);
+
+
+    
+}
+
+
+reverseinttestII(-522)

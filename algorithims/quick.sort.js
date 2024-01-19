@@ -16,3 +16,38 @@ function quicksort(arr){
 }
 
 console.log(quicksort([18,5,4,9,7,0,7,3,19,67,4]));
+
+//self test 1
+
+function quicksorttestI(nums) {
+
+    if(nums.length<2) return nums
+
+    let left=[]
+    let right=[]
+    let pivot=nums[0]
+
+    for(i=0;i<nums.length;i++){
+        let currentnum=nums[i]
+
+        if(currentnum>pivot)right.push(currentnum)
+        if(currentnum<pivot)left.push(currentnum)
+
+    }
+
+    return[...quicksorttestI(left),pivot,...quicksorttestI(right)]
+    
+}
+
+console.log('reslut:',quicksorttestI([18,5,4,9,7,0,7,3,19,67,4]))
+
+
+
+
+
+
+
+
+
+
+

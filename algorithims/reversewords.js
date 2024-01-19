@@ -22,3 +22,32 @@ function reverseword(s) {
 }
 
 reverseword('hello world new')
+
+
+//TEST 1
+
+function reversewordtestI(s) {
+
+    if(s.trim().length==0) return console.log('string is empty');
+let scopy=s
+    scopy=scopy.split(' ').reverse().join(' ')
+    console.log(s,":",scopy);
+
+}
+
+reversewordtestI('hello world new  _')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

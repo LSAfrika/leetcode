@@ -33,3 +33,41 @@ function chunkarray(array,target) {
 }
 
 chunkarray([1,2,3,4,5,6,7,8,9,0,12,23,12,4,5,6],3)
+
+
+function chunkarrayselftest(nums,target) {
+
+    let counter=0
+    let chunks=[]
+    let mainchunk=[]
+    for(num of nums){
+        counter++
+        chunks.push(num)
+
+        if(counter==target)mainchunk.push(chunks),chunks=[],counter=0
+    }
+
+    if(chunks.length>0)mainchunk.push(chunks)
+
+    console.log('chunks: ',mainchunk);
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+chunkarrayselftest([1,2,3,4,5,6,7,8,9,0,12,23,12,4,5,6],4)

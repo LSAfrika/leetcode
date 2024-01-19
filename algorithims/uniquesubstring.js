@@ -14,7 +14,7 @@ function unique(s){
     let substring=''
     for (const letter of substringarray) {
 
-        if(charmap.has(letter)) return console.log(substring)
+        if(charmap.has(letter)) return console.log(substring,substring.length)
         substring+=letter
         charmap.set(letter,letter)
         
@@ -38,7 +38,7 @@ function uniqueII(s){
     for (const letter of substringarray) {
 
         if(charmap.has(letter)){
-            substring+=letter
+            
              return console.log(substring,substring.length)
             }
         substring+=letter
@@ -49,5 +49,24 @@ function uniqueII(s){
 
 }
 
-unique('abcdedfghij')
+unique('abcddedfghij')
 uniqueII('abcdedfghij')
+
+
+//TEST 1\\
+
+function unique(s){
+    if(s.length==0)return console.log('empty string');
+    let charmap={}
+    let substring=''
+    for (letter of s){
+
+        if(charmap[letter]!==undefined) return console.log(substring);
+        substring+=letter
+        charmap[letter]=letter
+        }
+
+        console.log(s,' is fully unique');
+}
+
+unique('abcdeafghij')

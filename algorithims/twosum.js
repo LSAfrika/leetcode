@@ -43,4 +43,27 @@ console.log('map: ',summap );
   
 }
 
-twosum([1,4,5,3,6,7,8,2],9)
+// twosum([1,4,5,3,6,7,8,2],9)
+
+// TEST 1
+function twosumtestI(nums,target){
+
+  let complimentmap=new Map()
+
+  for(i=0;i<nums.length;i++){
+    let currentnum=nums[i]
+    let compliment=target-currentnum
+
+    if(complimentmap.has(compliment)) return console.log(complimentmap.get(compliment),i);
+    complimentmap.set(currentnum,i)
+  }
+ 
+  console.log('no sum total found for ',target,' in ',nums);
+}
+
+
+twosumtestI([1,4,5,3,6,7,8,2],8)
+
+
+
+

@@ -35,6 +35,65 @@ function palindrome(num){
 
 
 }
-palindrome(-12321)
+palindrome(12321)
 
 
+
+// SELFT TEST ON PALINDROME ALGORTITHIM
+function palindromeeasyI(num){
+    let numreverse=parseInt(num.toString().split('').reverse().join(''))
+
+    console.log(num,' is palindrome? ',num===numreverse);
+}
+palindromeeasyI(12311)
+
+
+function palindromeeasyII(num){
+    let numreverse=num.toString()
+
+    let left=0
+    let right  =numreverse.length-1
+
+    console.log(numreverse);
+    while(left<=right){
+
+        if(numreverse[left]!==numreverse[right]) return console.log( num,' is not a palindrome');
+        left++
+        right--
+    }
+
+    console.log(num,' is a palindrome');
+}
+palindromeeasyII(12311)
+
+function palindromemedium(num){
+
+    let numcopy=num
+    let modulus=0
+    let reversearry=[]
+    let dividing=true
+    while(dividing){
+     modulus=numcopy%10
+     
+     if(modulus !==numcopy){
+         reversearry.push(modulus)
+
+         reversearry=reversearry.map(numcopy=>numcopy*10)
+         numcopy=Math.floor(numcopy/10)
+         console.log("number ",numcopy,' modulus:',modulus);
+     }else{
+        console.log("number ",numcopy,' modulus:',modulus);
+
+    reversearry.push(numcopy)
+    dividing=false
+     }
+     
+
+    }
+    let check=reversearry.reduce((total,currentvalue)=>total+currentvalue)
+    console.log(check);
+
+    console.log('is ',num,' a palindrome? ',num==check, reversearry);
+}
+
+palindromemedium(12321)

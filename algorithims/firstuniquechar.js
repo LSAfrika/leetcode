@@ -23,3 +23,21 @@ function uniquechar(word){
 }
 
 uniquechar('ssdwewetgfdggrtrqgffg')
+
+
+function uniquecharselftest(word){
+    
+    let lettermap={}
+    for(char in word){
+        lettermap[char]=true
+    }
+
+    for(char in word){
+       if( lettermap[char]==true) return console.log(char,' is the first unique letter');
+    }
+
+    console.log('no unique letters in ',word);
+}
+
+
+uniquecharselftest('ssdwewetgfdggrtrqgffg')

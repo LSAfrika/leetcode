@@ -10,6 +10,8 @@ function twosumIIsolution( nums,  target) {
     // Assume input is already sorted.
     for ( i = 0; i < nums.length; i++) {
     let j = bsearch(nums, target - nums[i], i + 1);
+    console.log(j);
+
     if (j != -1) {
     return console.log( i , j );
     }
@@ -20,7 +22,7 @@ function twosumIIsolution( nums,  target) {
     let L = start
     let R = nums.length - 1;
     while (L < R) {
-    let M = (L + R) / 2;
+    let M = Math.floor((L + R) / 2);
     if (nums[M] < compliment) {
     L = M + 1;
     } else {

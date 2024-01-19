@@ -41,3 +41,32 @@ let hayarray=Array.from(hay)
 
 
  haystack('wehkbkbndfsdfgbookskerhe','booK')
+
+
+
+
+
+
+function haystackselftest(hay,needle){
+
+
+    let needlewordlength=needle.length
+    for(i=0;i<hay.length;i++){
+        let currentchar=hay[i]
+        if(needle[0]==currentchar){
+            let wordcheck=hay.slice(i,i+needlewordlength)
+
+            if(wordcheck==needle)return console.log(needle,'  is in ',hay,' as from index ',i);
+        }
+    
+
+    }
+
+    console.log(needle, ' not in ',hay);
+}
+
+
+
+
+
+ haystackselftest('wehkbkbndfsdfgbookskerhe','ksk')
