@@ -59,14 +59,23 @@ function unique(s){
     if(s.length==0)return console.log('empty string');
     let charmap={}
     let substring=''
-    for (letter of s){
+    let substringarray=[]
+    for (i=0;i<s.length;i++){
+    let letter=s[i]
 
-        if(charmap[letter]!==undefined) return console.log(substring);
+        if(charmap[letter]!==undefined){
+              console.log(substring);
+
+              substringarray.push({substring,length:substring.length})
+              substringarray=substringarray.sort((a,b)=>b.length-a.length)
+              substring=''
+            
+            }
         substring+=letter
         charmap[letter]=letter
         }
 
-        console.log(s,' is fully unique');
+        console.log('longest substring: ',substringarray[0].substring,' length: ',substringarray[0].length);
 }
 
-unique('abcdeafghij')
+unique('abcdeafghijklmnoh')
