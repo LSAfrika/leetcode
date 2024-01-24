@@ -96,4 +96,43 @@ function palindromemedium(num){
     console.log('is ',num,' a palindrome? ',num==check, reversearry);
 }
 
-palindromemedium(12321)
+//palindromemedium(12321)
+
+
+//palindrome selftest
+
+function testpalindrome(num) {
+
+    let numcopy=num
+    let modulus=0
+    let result=[]
+
+    while (modulus!=numcopy) {
+
+      
+
+        modulus=numcopy%10
+    
+        if(modulus!=numcopy){
+            result.push(modulus)
+            result=result.map(num=>num*10)
+            numcopy=Math.floor(numcopy/10)
+        }else{
+          
+
+            result.push(numcopy)
+
+        }
+        
+    }
+    console.log('after while loop: ',modulus,numcopy);
+
+    let sumcheck=result.reduce((total,curr)=>total+curr)
+
+    console.log(num,' is palinrome? ',sumcheck==num,result);
+    
+}
+
+testpalindrome(12321)
+
+console.log(Math.floor(1/10))

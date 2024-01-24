@@ -39,7 +39,28 @@ function quicksorttestI(nums) {
     
 }
 
-console.log('reslut:',quicksorttestI([18,5,4,9,7,0,7,3,19,67,4]))
+console.log('reslut test 2:',quicksorttestII([18,5,4,9,7,0,7,3,19,67,4]))
+// console.log('reslut:',quicksorttestI([18,5,4,9,7,0,7,3,19,67,4]))
+
+
+function quicksorttestII(nums) {
+
+    if(nums.length<2) return nums
+
+    let left=[]
+    let right=[]
+    let pivot=nums[Math.floor(nums.length/2)]
+
+    for(num of nums){
+
+        if(num>pivot)right.push(num)
+        if(num<pivot)left.push(num)
+    }
+
+
+    return [...quicksorttestII(left),pivot,...quicksorttestII(right)]
+    
+}
 
 
 

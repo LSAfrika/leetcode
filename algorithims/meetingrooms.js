@@ -63,10 +63,10 @@ function meetingroomsI(meetingtimes){
     console.log('all meetings are attendable');
 }
 
-meetingroomsII([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
-meetingroomsII([[13,14],[1,5],[6,7],[8,9],[10,12]])
-meetingroomsI([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
-meetingroomsI([[1,5],[6,7],[8,9],[10,12],[13,14]])
+// meetingroomsII([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
+// meetingroomsII([[13,14],[1,5],[6,7],[8,9],[10,12]])
+// meetingroomsI([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
+// meetingroomsI([[1,5],[6,7],[8,9],[10,12],[13,14]])
 
 
 
@@ -97,6 +97,33 @@ function meetingroomsTestI(meetings){
 }
 
 
-meetingroomsTestI([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
+meetingroomsTestII([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
+meetingroomsTestII([[13,14],[1,5],[6,7],[8,9],[10,12]])
 meetingroomsTestI([[13,14],[1,5],[6,7],[8,9],[10,12]])
 
+function meetingroomsTestII(meetings){
+
+
+    if(meetings<2)return console.log('1 room created since there is only one meeting')
+    meetings=meetings.sort((a,b)=>a[0]-b[0])
+console.log(meetings);
+    let rooms=[]
+    let firstmeetingend=meetings[0][1]
+    rooms.push(firstmeetingend)
+
+    for(i=1;i<meetings.length;i++){
+        let currentmeeting=meetings[i]
+        let [currentstart,currentend]=[...currentmeeting]
+        let shortestimeinrooms=Math.min(...rooms)
+        if(currentstart<shortestimeinrooms){
+            rooms.push(currentend)
+        }else{
+            let index=rooms.indexOf(shortestimeinrooms)
+            rooms[index]=currentend
+
+        }
+    }
+
+    console.log('rooms created: ',rooms.length);
+
+}

@@ -1,7 +1,7 @@
 /**
  * 
  * @param {s} string
- * retrieve the length of the last word within a sentrence
+ * retrieve the length of the last word within a sentence
  *  
  */
 
@@ -23,11 +23,11 @@ function word(s) {
     
 }
 
-word('hello there how are you    ')
-word('   ')
+// word('hello there how are you    ')
+// word('   ')
 
-lastwordlengthtest('   ')
-lastwordlengthtest('hello there how are you    ')
+// lastwordlengthtest('   ')
+// lastwordlengthtest('hello there how are you    ')
 
 
 function lastwordlengthtest(word) {
@@ -42,7 +42,7 @@ function lastwordlengthtest(word) {
     while(wordarray[wordarray.length-1]==' '){
         wordarray.pop()
     }
-    if(wordarray.lengt==0) return console.log('word has no chars');
+    if(wordarray.length==0) return console.log('word has no chars');
 
     wordarray=wordarray.join('').split(' ')
     let lastword=wordarray[wordarray.length-1]
@@ -50,3 +50,24 @@ function lastwordlengthtest(word) {
     console.log('last word is "',lastword,'" and its length is ',lastword.length);
     
 }
+
+function lastwordlengthtestII(word){
+
+    if(word.trim().length==0) return console.log('string empty');
+
+  
+    let wordarray= word.split('')
+
+  
+    while(wordarray[wordarray.length-1].trim().length==0){
+
+        
+       wordarray.splice(wordarray.length-1)
+    }
+
+    console.log(wordarray[wordarray.length-1],' is the last word and its length is: ',wordarray[wordarray.length-1].length );
+
+}
+
+
+ lastwordlengthtestII('  3 ')

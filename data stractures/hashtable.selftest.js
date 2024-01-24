@@ -47,7 +47,7 @@ class Hashtable{
 
     remove(key){
 
-        if(this.table.length==0) return
+    
         const index=this.hash(key)
 
         if(this.table[index]==undefined) return undefined
@@ -66,7 +66,7 @@ class Hashtable{
     view(){
 
         let obj='{ \n'
-        for(let [index,value] of this.table.entries()){
+        for(let value of this.table){
             if(value!==undefined) {
             // console.log(value);
 

@@ -60,9 +60,36 @@ function romannumbertestI(num){
     console.log(result);
 }
 
-romannumbertestI('xiv')
+romannumbertestII('xxix')
 
 
 
+//tes 2
 
+function romannumbertestII(num){
+
+
+    num=num.toUpperCase()
+    let romanmap={
+        I:1,V:5, X:10, L:50, C:100, D:500, M:1000
+        
+    }
+
+    let result=0
+
+    for(i=0;i<num.length;i++){
+        let currentnum=romanmap[num[i]]
+        let nextnum   =romanmap[num[i+1]]
+
+        if(currentnum<nextnum){
+            result+=nextnum-currentnum
+            i++
+        }else{
+            result+=currentnum
+        }
+    }
+
+    return console.log(result);
+
+}
 
