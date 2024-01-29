@@ -65,4 +65,32 @@ function validP(word) {
 
 
 
-validP('{}[]{[()]<>}')
+//validP('{}[]{[()]<>}')
+
+//self test valid parenthese
+validtest('{}[]{[()]<>>[]]}')
+
+function validtest(parenthese) {
+
+    if(parenthese.length%2!==0) return console.log(parenthese,' inavlid due to its odd number length');
+    let stack=[]
+    let startguard=[']','}',')','>']
+    let insert  =['[','{','(','<']
+    if(startguard.includes(parenthese[0])||insert.includes(parenthese[parenthese.length-1])) return console.log(parenthese,'inavlid  due to guard check fail');
+    for(i=0;i<parenthese.length;i++){
+        if(insert.includes(parenthese[i])){
+            stack.push(parenthese[i])
+        }else{
+            let popped=stack.pop()
+            if(popped=='['&&parenthese[i] !=']') return console.log('1.',popped,parenthese[i],' invalid ');
+            if(popped=='{'&&parenthese[i] !='}') return console.log('2.',popped,parenthese[i],' invalid ');
+            if(popped=='('&&parenthese[i] !=')') return console.log('3.',popped,parenthese[i],' invalid ');
+            if(popped=='<'&&parenthese[i] !='>') return console.log('4.',popped,parenthese[i],' invalid ');
+
+        }
+    }
+
+    if(stack.length==0) return console.log(parenthese,' valid ');
+    return console.log('final: ',parenthese,' invalid ');
+    
+}

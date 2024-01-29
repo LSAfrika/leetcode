@@ -36,9 +36,11 @@ list1.next.next.next.next=new list(11)
 list1.next.next.next.next.next=new list(12)
 list1.next.next.next.next.next.next=new list(15)
 list1.next.next.next.next.next.next.next=new list(16)
+list1.next.next.next.next.next.next.next.next=new list(17)
 
 displaylist(list1)
-swapnodes(list1)
+//swapnodes(list1)
+swapnodesII(list1)
 
 
 function swapnodes(nodelist) {
@@ -66,4 +68,25 @@ viewretunedlist=viewretunedlist.next
 // console.log(viewretunedlist);
 displaylist(viewretunedlist);
 
+}
+
+function swapnodesII(nodelist) {
+
+    while(nodelist&&nodelist.next){
+        let currentnodevalue=nodelist
+        console.log('current node',currentnodevalue.value);
+        let nextnodevalue=nodelist.next
+        console.log('next node',nextnodevalue.value);
+
+
+        nodelist=nextnodevalue
+        nodelist.next=currentnodevalue
+        nodelist.next.next=nextnodevalue.next
+        nodelist=nodelist.next.next
+
+        console.log(nodelist);
+        break
+
+    }
+    displaylist(nodelist)
 }

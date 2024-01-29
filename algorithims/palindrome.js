@@ -136,3 +136,31 @@ function testpalindrome(num) {
 testpalindrome(12321)
 
 console.log(Math.floor(1/10))
+
+
+// test 2 more effecient way to to reverse an intager
+
+palindrometesII(12331)
+function palindrometesII(num) {
+
+    let numcopy=num
+    let dividing=true
+    let reverse=0
+    while (dividing) {
+
+        dividing=false
+        if(numcopy<=0) return
+
+
+        reverse=reverse*10+numcopy%10
+
+        numcopy=Math.floor(numcopy/10)
+
+        if(numcopy>0) dividing=true
+
+    }
+
+    console.log(reverse,' :reverse: ',num);
+    console.log(reverse,' is a plaindrome: ',reverse==num);
+    
+}
