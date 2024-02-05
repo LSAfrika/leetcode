@@ -35,7 +35,7 @@ function palindrome(num){
 
 
 }
-palindrome(12321)
+//palindrome(12321)
 
 
 
@@ -45,7 +45,7 @@ function palindromeeasyI(num){
 
     console.log(num,' is palindrome? ',num===numreverse);
 }
-palindromeeasyI(12311)
+//palindromeeasyI(12311)
 
 
 function palindromeeasyII(num){
@@ -64,7 +64,7 @@ function palindromeeasyII(num){
 
     console.log(num,' is a palindrome');
 }
-palindromeeasyII(12311)
+//palindromeeasyII(12311)
 
 function palindromemedium(num){
 
@@ -133,9 +133,9 @@ function testpalindrome(num) {
     
 }
 
-testpalindrome(12321)
+//testpalindrome(12321)
 
-console.log(Math.floor(1/10))
+//console.log(Math.floor(1/10))
 
 
 // test 2 more effecient way to to reverse an intager
@@ -149,18 +149,47 @@ function palindrometesII(num) {
     while (dividing) {
 
         dividing=false
-        if(numcopy<=0) return
+        console.log('num copy divided: ',numcopy);
+        if(numcopy<=0) break
 
 
         reverse=reverse*10+numcopy%10
 
         numcopy=Math.floor(numcopy/10)
 
-        if(numcopy>0) dividing=true
+     //  if(numcopy>0)    
+            dividing=true
 
     }
 
+    console.log('broke out of loop');
     console.log(reverse,' :reverse: ',num);
     console.log(reverse,' is a plaindrome: ',reverse==num);
+    
+}
+
+
+palindrometestIII(1212)
+
+function palindrometestIII(num) {
+
+let copynum=num
+
+let dividing=true
+let reversenumber=0
+
+while (dividing) {
+    dividing=false
+
+    if(copynum<=0) break
+
+    reversenumber=reversenumber*10+copynum%10
+    copynum=Math.floor(copynum/10)
+    dividing=true
+
+    
+}
+
+console.log(num,'palindrome: ',reversenumber==num)
     
 }

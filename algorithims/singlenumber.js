@@ -34,7 +34,7 @@ for([key,count] of nummap.entries()){
     
 }
 
-singlenumberI([1,2,3,2,4,1,5,5,3])
+//singlenumberI([1,2,3,2,4,1,5,5,3])
 
 
 
@@ -59,4 +59,27 @@ function singlenumberII(nums) {
     
 }
 
-singlenumberII([1,2,3,2,4,1,5,4,3])
+//singlenumberII([1,2,3,2,4,1,5,4,3])
+singlenumbertestI([1,1,2,2,4,5,5,4,3])
+
+
+
+
+function singlenumbertestI(nums) {
+  nums=nums.sort((a,b)=>a-b)
+  console.log(nums);
+  //edge case 1: unique is at start
+  if(nums[0]!=nums[1]&&nums[1]==nums[2]) return console.log(nums[0]);
+  //edge case 2: unique is at end
+  if(nums[nums.length-1]!=nums[nums.length-2]&&nums[nums.length-2]==nums[nums.length-3]) return console.log(nums[nums.length-1]);
+
+  for(i=0;i<nums.length;i++){
+    let curr=nums[i]
+    let next=nums[i+1]
+
+    if(curr!=next) return console.log(curr);
+    i++
+  }
+
+  
+}

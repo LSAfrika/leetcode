@@ -18,6 +18,7 @@ class Graph{
     deletevertex(vertex){
 
         if(!this.graph[vertex])return
+
             this.graph[vertex].forEach(node => {
                 if(this.graph[node].has(vertex)) this.graph[node].delete(vertex)
                 
@@ -79,9 +80,8 @@ graph.addedge('a','b')
 graph.addedge('b','c')
 graph.hasedge('a','b')
 graph.hasedge('a','c')
-
-// graph.viewgraph()
-  graph.deletevertex('b')
+graph.viewgraph()
+graph.deletevertex('b')
 graph.deletedge('a','b')
 graph.deletedge('c','b')
 graph.viewgraph()

@@ -65,5 +65,25 @@ function twosumtestI(nums,target){
 twosumtestI([1,4,5,3,6,7,8,2],8)
 
 
+twosumII([1,4,5,3,6,7,8,2],90)
+
+function twosumII(nums,target) {
+
+  let targetmap=new Map()
+
+  for(i=0;i<nums.length;i++){
+    let currentnum=nums[i]
+    let compliment=target-currentnum
+
+
+    if(targetmap.has(compliment))return console.log(targetmap.get(compliment),i);
+    targetmap.set(currentnum,i)
+  }
+
+  console.log(target,' cant be found in ',nums);
+  
+}
+
+
 
 
