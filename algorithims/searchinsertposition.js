@@ -51,4 +51,37 @@ console.log(nums);
     
  }
 
- searchinserttestI([100,34,21,67,900,87],3)
+//  searchinserttestI([100,34,21,67,900,87],3)
+
+
+//medium
+//big O(log n)
+ searchinsertposition([1,2,3,4,6,8],5)
+
+ function searchinsertposition(nums,target) {
+
+   
+    let left=0
+    let right=nums.length
+if(nums[0]>target) return console.log(0);
+if(nums[nums.length-1]<target) return console.log(nums.length);
+    while(left<=right){
+        let midpoint=Math.floor((left+right)/2)
+        // console.log('midpoint val: ',nums[midpoint],'midpoint index: ',midpoint,'target: ',target);
+        if(nums[midpoint]==target) return console.log('target found: ',midpoint);
+        if(target>nums[midpoint]) {
+            left=midpoint+1
+
+            if(nums[left]<target&&target<nums[left+1]) return console.log(target,' insert at index: ',left);
+
+
+        }else{
+            right=midpoint
+
+            if(nums[right-1]<target&&right<nums[right]) return console.log(target,' insert at index: ',right-1);
+
+        }
+
+    }
+
+}

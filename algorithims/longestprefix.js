@@ -196,7 +196,7 @@ function longestprefix(words) {
         for(i=0;i<words.length;i++){
             let currentword=words[i]
             
-            if(lastword[0]!==currentword[0]) return console.log(`"${prefix}"`);
+        if(lastword[0]!==currentword[0]) return console.log(`"${prefix}"`);
             if(lastword[letterindex]==currentword[letterindex])letters.push(lastword[letterindex])
     
         }
