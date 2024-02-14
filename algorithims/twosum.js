@@ -62,10 +62,10 @@ function twosumtestI(nums,target){
 }
 
 
-twosumtestI([1,4,5,3,6,7,8,2],8)
+//twosumtestI([1,4,5,3,6,7,8,2],8)
 
 
-twosumII([1,4,5,3,6,7,8,2],90)
+//twosumII([1,4,5,3,6,7,8,2],9)
 
 function twosumII(nums,target) {
 
@@ -84,6 +84,17 @@ function twosumII(nums,target) {
   
 }
 
+twosumIII([1,4,5,3,6,7,8,2],8)
 
+function twosumIII(nums,target) {
+  let numsmap={}
+  for(i=0;i<nums.length;i++){
+    let currentnum=nums[i]
+    let compliment =target-currentnum
+    if(numsmap[compliment]) return console.log(numsmap[compliment],i);
 
+    numsmap[currentnum]=i
+  }
+  console.log('no compliment');
+}
 

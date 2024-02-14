@@ -61,6 +61,7 @@ function singlenumberII(nums) {
 
 //singlenumberII([1,2,3,2,4,1,5,4,3])
 singlenumbertestI([1,1,2,2,4,5,5,4,3])
+singlenumbertestIII([1,1,2,2,4,5,5,4,3])
 
 
 
@@ -81,5 +82,25 @@ function singlenumbertestI(nums) {
     i++
   }
 
+  
+}
+
+function singlenumbertestIII(nums) {
+
+  // nums=nums.sort((a,b)=>a-b)
+  let frequencymap={}
+  
+  for(num of nums){
+
+    if(frequencymap[num]){
+      frequencymap[num]+=1
+      if(frequencymap[num]>=2) delete frequencymap[num]
+    }else{
+      frequencymap[num]=1
+
+    }
+  }
+
+  console.log(frequencymap);
   
 }

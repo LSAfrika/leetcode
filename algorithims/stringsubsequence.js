@@ -48,3 +48,25 @@ for(i=0;i<valueholder.length-1;i++){
 }
 
 subsequence('abcde','ace')
+subsequenceII('abcde','dac')
+
+
+// second do over a more effecient way compared to the first
+function subsequenceII(string,target){
+    if(string==target) return console.log(true);
+
+    let targetarray=Array.from(target)
+
+    for(char of string){
+        if(char==targetarray[0]){
+            targetarray.shift()
+
+          if(targetarray.length==0) return console.log(true);
+        }
+
+
+    }
+
+    console.log(targetarray.length==0);
+
+}

@@ -140,7 +140,7 @@ function testpalindrome(num) {
 
 // test 2 more effecient way to to reverse an intager
 
-palindrometesII(12331)
+//palindrometesII(12331)
 function palindrometesII(num) {
 
     let numcopy=num
@@ -169,7 +169,7 @@ function palindrometesII(num) {
 }
 
 
-palindrometestIII(1212)
+//palindrometestIII(1212)
 
 function palindrometestIII(num) {
 
@@ -192,4 +192,26 @@ while (dividing) {
 
 console.log(num,'palindrome: ',reversenumber==num)
     
+}
+
+palindrometestIV(1212)
+palindrometestIV(121)
+
+
+function palindrometestIV(num){
+    if(num<0) return console.log(false);
+
+    let modulus=0
+    let copy=num
+    let modulating=true
+
+    while (modulating) {
+        modulating=false
+        modulus=modulus*10+copy%10
+        copy=Math.floor(copy/10)
+        if(copy>0)modulating=true
+        
+    }
+
+    return console.log(modulus==num);
 }

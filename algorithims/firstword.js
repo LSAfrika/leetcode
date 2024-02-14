@@ -20,6 +20,8 @@
 //     console.log(needle,' doesent occur in ',hay)
 // }
 
+haystack('wehkbkbndfsdfgbookskerhe','booK')
+
 
 function haystack(hay,needle) {{
 
@@ -40,11 +42,11 @@ let hayarray=Array.from(hay)
 }
 
 
- haystack('wehkbkbndfsdfgbookskerhe','booK')
 
 
 
 
+ haystackselftest('wehkbkbndfsdfgbookskerhe','ksk')
 
 
 function haystackselftest(hay,needle){
@@ -66,7 +68,26 @@ function haystackselftest(hay,needle){
 }
 
 
+haystack('wehkbkbndfsdfgbookskerhe','booK')
+Test('wehkbkbndfsdfgbookskerhe','boo')
+
+function Test(hay,needle){
+    let needlelength=needle.length
+
+    for (let i = 0; i < hay.length; i++) {
+       let curentchar=hay[i]
+
+       if(curentchar==needle[0]){
+        let slice=hay.slice(i,i+needlelength)
+
+        console.log(slice);
+        if(slice==needle) return console.log(needle,i);
+       }
+        
+    }
+
+    return console.log(-1);
+}
 
 
 
- haystackselftest('wehkbkbndfsdfgbookskerhe','ksk')

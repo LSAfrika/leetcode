@@ -63,11 +63,11 @@ function singlenumbertesteasy(nums) {
 }
 
 
-singlenumbertestmedium([1,3,5,6,6,6,3,3,5,4,4,4,5])
+//singlenumbertestmedium([1,3,5,6,6,6,3,3,5,4,4,4,5])
 
 
 // here we sort the arry then traverse the array edge
-// case occurs if the numberc is at the start or the end 
+// case occurs if the number is at the start or the end 
 function singlenumbertestmedium(nums) {
 
      nums=nums.sort((a,b)=>a-b)
@@ -90,5 +90,40 @@ for(i=0;i<nums.length-2;i++){
 
 }
 
+    
+}
+
+//singlenumIV([1,6,6,3,5,6,3,1,1,3,5,4,5])
+singlenumIV([1,1,1,3,5,6,6,4,4,6,5,4,5])
+
+
+function singlenumIV(nums) {
+
+    nums=nums.sort((a,b)=>a-b)
+
+    //edge cases where number is at begining or end
+    //  console.log(nums);
+    if(nums[0]!==nums[1]&&nums[1]==nums[2]) return console.log(nums[0])
+    if(nums[nums.length-1]!==nums[nums.length-2]&&nums[nums.length-2]==nums[nums.length-3]) return console.log(nums[nums.length-1])
+
+
+    for(i=0;i<nums.length-2;i++){
+        let current=nums[i]
+        let next=nums[i+1]
+        let nextnext=nums[i+2]
+      //  console.log('current index',i,current,next,nextnext);
+
+        // console.log(current,next,nextnext);
+      if(current==next&&next==nextnext)  {
+        // console.log('numbers match',i);
+        i+=2
+      }else{
+        return console.log(current);
+      }
+        
+
+    }
+
+    console.log('no unique');
     
 }

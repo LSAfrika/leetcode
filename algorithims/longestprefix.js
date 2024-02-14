@@ -52,11 +52,14 @@
 
 // }
 
+
+//REDO THIS A BUG HAS BEEN FOUND
+
 function longestprefix(words) {
     
-    console.log(words);
 
-    words=words.map(word=>word.split('')).sort((a,b)=>a.length-b.length).map(word=>word.join(''))
+    words=words.sort((a,b)=>a.length-b.length)
+    console.log(words);
 
     let firstword=words[0]
     let prefixlength=firstword.length
@@ -82,7 +85,6 @@ function longestprefix(words) {
 }
 
 
- longestprefix(['flour','floor','flower','flow','flew','flame'])
 
 
 
@@ -128,4 +130,50 @@ function longestprefix(words) {
 
  }
 
- longestprefixtest(['flour','floor','flower','flow','floew','floame','dsf'])
+ //longestprefixtest(['flour','floor','flower','flow','floew','flame'])
+ longestprefixcorrect(['flour','floor','flower','flow','floew','flame','flme'])
+ longestprefixcorrect(['flour','floor','flower','flow','floew','flome','dead'])
+ longestprefix(['flour','floor','flower','failed','flowed','flew','flame'])
+
+
+ /**
+  * 
+  * @param {string[]} words 
+  * @returns {string}
+  * 
+  * time complexity O(np) where P denotes the length of the prefix
+  * we use the last word in the array to avoid reindexing since space complexity is O(1) we achieve that 
+  * by popping the last word
+  */
+ function longestprefixcorrect(words){
+    console.log(words);
+    let lastword = words.pop()
+    let prefixletterarray=[]
+    let prefix=''
+    let prefixing=true
+    let charindex=0
+
+    while (prefixing) {
+        prefixing=false
+
+        for (let i = 0; i < words.length; i++) {
+          let currentword=words[i]
+          
+              if  (currentword[0]!==lastword[0]) return console.log('"no prefix"');
+              if  (currentword[charindex]==lastword[charindex]) prefixletterarray.push(currentword[charindex])
+            
+        }
+
+        if(prefixletterarray.length==words.length){
+            console.log(prefixletterarray);
+            prefixing=true
+            prefix+=prefixletterarray[0]
+            prefixletterarray=[]
+            charindex++
+        }
+        
+    }
+
+    return console.log(prefix);
+
+ }
