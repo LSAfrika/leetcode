@@ -131,9 +131,9 @@ function longestprefix(words) {
  }
 
  //longestprefixtest(['flour','floor','flower','flow','floew','flame'])
- longestprefixcorrect(['flour','floor','flower','flow','floew','flame','flme'])
- longestprefixcorrect(['flour','floor','flower','flow','floew','flome','dead'])
- longestprefix(['flour','floor','flower','failed','flowed','flew','flame'])
+//  longestprefixcorrect(['flour','floor','flower','flow','floew','flame','flme'])
+//  longestprefixcorrect(['flour','floor','flower','flow','floew','flome','dead'])
+//  longestprefix(['flour','floor','flower','failed','flowed','flew','flame'])
 
 
  /**
@@ -175,5 +175,41 @@ function longestprefix(words) {
     }
 
     return console.log(prefix);
+
+ }
+
+
+
+ longestprefixcorrectII(['flo,ur','flo,or','flo,wer','flo,w','flo,ew','flo,me','flo,me','flo,or','dear'])
+
+ function longestprefixcorrectII(words){
+
+    let lastword=Array.from(words.pop())
+    let prefix=""
+    let prefixing=true
+    let letterindex=0
+    let letters=[]
+
+    while(prefixing){
+        prefixing=false
+
+        for(i=0;i<words.length;i++){
+            let currentword=words[i]
+            
+            if(lastword[0]!==currentword[0]) return console.log(`"${prefix}"`);
+            if(lastword[letterindex]==currentword[letterindex])letters.push(lastword[letterindex])
+    
+        }
+
+        if(letters.length==words.length){
+            prefix+=letters[0]
+            letters=[] 
+            prefixing=true 
+            letterindex++
+
+        }
+    }
+
+    console.log(prefix);
 
  }

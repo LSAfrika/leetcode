@@ -68,7 +68,7 @@ console.log('function I: ',results);
 
 
 // second function uses an array though performance will be hit due to read time when looking for a particular student
-topfiveaverageII([[1,60],[2,75],[2,50],[1,89],[1,76],[2,76],[2,90],[2,60],[1,43],[1,67],[1,44],[2,87],[2,92]])
+topfiveaverageII([[1,91],[1,92],[2,93],[2,97],[1,60],[2,77],[1,65],[1,87],[1,100],[2,100],[2,76]])
 
 function topfiveaverageII(results) {
 
