@@ -19,10 +19,10 @@ function tradestock(stocks){
     }return console.log('bestprofit realized: ',bestprofit);
 }
 
-tradestock([35,30,25,22,21,13,50])
+//tradestock([35,30,25,22,21,13,50])
 
-tradestock([1, 6, 7, 9])
-tradestock([1, 5, 3, 2])
+//tradestock([1, 6, 7, 9])
+//tradestock([1, 5, 3, 2])
 
 
 // revising stock trade algorithim
@@ -44,5 +44,26 @@ if(buystock>currentstock){
     console.log('stock profit: ',profit);
 }
 
-tradestockI([35,30,25,22,21,13,50])
+//tradestockI([35,30,25,22,21,13,50])
+tradestockII([35,30,25,22,21,13,10])
 
+function tradestockII(stocks) {
+    
+    let initialstock=stocks[0]
+    let profit=0
+
+    for (let i = 0; i < stocks.length; i++) {
+        let currentdaystock=stocks[i]
+
+        if(initialstock>currentdaystock){
+
+            initialstock=currentdaystock
+        }else{
+            profit=Math.max(profit,(currentdaystock-initialstock))
+
+        }
+        
+    }
+
+    return console.log(profit);
+}

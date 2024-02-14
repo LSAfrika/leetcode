@@ -64,7 +64,7 @@ function meetingroomsI(meetingtimes){
 }
 
 // meetingroomsII([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
-// meetingroomsII([[13,14],[1,5],[6,7],[8,9],[10,12]])
+ meetingroomsII([[13,14],[1,5],[6,7],[8,9],[10,12]])
 // meetingroomsI([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
 // meetingroomsI([[1,5],[6,7],[8,9],[10,12],[13,14]])
 
@@ -97,9 +97,9 @@ function meetingroomsTestI(meetings){
 }
 
 
-meetingroomsTestII([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
-meetingroomsTestII([[13,14],[1,5],[6,7],[8,9],[10,12]])
-meetingroomsTestI([[13,14],[1,5],[6,7],[8,9],[10,12]])
+// meetingroomsTestII([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
+// meetingroomsTestII([[13,14],[1,5],[6,7],[8,9],[10,12]])
+// meetingroomsTestI([[13,14],[1,5],[6,7],[8,9],[10,12]])
 
 function meetingroomsTestII(meetings){
 
@@ -126,4 +126,58 @@ console.log(meetings);
 
     console.log('rooms created: ',rooms.length);
 
+}
+
+
+//test 3
+//meeting rooms easy
+//allmeetingsattendable([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
+//allmeetingsattendable([[1,3],[4,5],[6,9],[10,12]])
+
+function allmeetingsattendable(meetings) {
+    
+    meetings=meetings.sort((a,b)=>a[0]-b[0])
+console.log(meetings);
+    let earliestmeeting=meetings[0]
+
+    for (let i = 1; i < meetings.length; i++) {
+       
+        let currentmeeting=meetings[i]
+
+        if(earliestmeeting[1]>currentmeeting[0])return console.log('all meetings are attendable? ',false);
+        earliestmeeting=currentmeeting
+        
+    }
+
+    return console.log('all meetings are attendable? ',true);
+}
+
+
+//meetingroomscreated([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
+  meetingroomscreated([[13,14],[1,5],[6,7],[8,9],[10,12]])
+
+function meetingroomscreated(meetings) {
+    meetings=meetings.sort((a,b)=>a[0]-b[0])
+    let firstmeetingendtime=meetings[0][1]
+    let roomscreated=[firstmeetingendtime]
+
+    for (let i = 1; i < meetings.length; i++) {
+        let [currentmeetingstarttime,currentmeetingendtime]=[...meetings[i]]
+
+        if(firstmeetingendtime>currentmeetingstarttime){
+
+        roomscreated.push(currentmeetingendtime)
+
+        }else{
+
+           roomscreated=roomscreated.sort((a,b)=>a-b)
+
+           roomscreated[0]=currentmeetingendtime
+
+        }
+        
+    }
+
+    return console.log(roomscreated.length);
+    
 }
