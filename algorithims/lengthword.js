@@ -70,4 +70,23 @@ function lastwordlengthtestII(word){
 }
 
 
- lastwordlengthtestII('  3 ')
+ //lastwordlengthtestII('  3 ')
+
+ laswordI('  3 ')
+ laswordI('      ')
+
+ function laswordI(word) {
+
+    if(word.trim().length==0) return console.log('string empty');
+
+
+    word=word.split(' ')
+
+    console.log(word);
+
+    while(word[word.length-1].length==0){
+        word.pop()
+    }
+    console.log(word[word.length-1].length);
+    
+ }
