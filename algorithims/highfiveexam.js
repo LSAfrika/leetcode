@@ -18,7 +18,7 @@
 
 
 //this method uses a hashmap wich will perform better than using an array
-topfiveaverage([[1,60],[2,75],[2,50],[1,89],[1,76],[2,76],[2,90],[2,60],[1,43],[1,67],[1,44],[2,87],[2,92]])
+// topfiveaverage([[1,60],[2,75],[2,50],[1,89],[1,76],[2,76],[2,90],[2,60],[1,43],[1,67],[1,44],[2,87],[2,92]])
 function topfiveaverage(results){
 
 // let resultscopy=results.sort((a,b)=>a[0]-b[0])
@@ -69,6 +69,7 @@ console.log('function I: ',results);
 
 // second function uses an array though performance will be hit due to read time when looking for a particular student
 topfiveaverageII([[1,91],[1,92],[2,93],[2,97],[1,60],[2,77],[1,65],[1,87],[1,100],[2,100],[2,76]])
+topfiveaverageII([[1,91],[1,92],[2,93],[2,97],[1,60],[1,90],[2,77],[2,77],[1,65],[1,87],[1,100],[2,100],[2,76]])
 
 function topfiveaverageII(results) {
 
@@ -98,5 +99,44 @@ function topfiveaverageII(results) {
     });
 
     console.log('function II: ',meanscore);
+    
+}
+
+//self test 1 of highfive exam question
+topfivetestI([[1,91],[1,92],[2,93],[2,97],[1,60],[1,90],[2,77],[2,77],[1,65],[1,87],[1,100],[2,100],[2,76]])
+
+function topfivetestI(results) {
+//first sort results with the ids
+    results=results.sort((a,b)=>a[0]-b[0])
+    // console.log(results);
+    resultsmap={}
+    resultoutput=[]
+    for(i=0;i<results.length;i++){
+        let [id,result]=[...results[i]]
+
+        if(!resultsmap[id]){
+            resultsmap[id]=[result]
+        }else{
+           resultsmap[id].push(result)
+      
+       if(resultsmap[id].length>5)  {
+         resultsmap[id]=resultsmap[id].sort((a,b)=>b-a)
+         resultsmap[id].pop()
+        
+        }
+        }
+
+
+    }
+
+
+    for (let id in resultsmap) {
+       
+        let resulttotal=resultsmap[id].reduce((total,curr)=>total+curr)
+        let bestavgscore=Math.floor(resulttotal/resultsmap[id].length)
+        resultsmap[id]=[bestavgscore]
+        resultoutput.push([id,bestavgscore])
+    }
+    console.log(resultsmap,resultoutput);
     
 }
