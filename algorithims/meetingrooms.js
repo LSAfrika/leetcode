@@ -64,7 +64,7 @@ function meetingroomsI(meetingtimes){
 }
 
 // meetingroomsII([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
- meetingroomsII([[13,14],[1,5],[6,7],[8,9],[10,12]])
+// meetingroomsII([[13,14],[1,5],[6,7],[8,9],[10,12]])
 // meetingroomsI([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
 // meetingroomsI([[1,5],[6,7],[8,9],[10,12],[13,14]])
 
@@ -153,7 +153,7 @@ console.log(meetings);
 }
 
 
-//meetingroomscreated([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
+meetingroomscreated([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
   meetingroomscreated([[13,14],[1,5],[6,7],[8,9],[10,12]])
 
 function meetingroomscreated(meetings) {
@@ -179,5 +179,54 @@ function meetingroomscreated(meetings) {
     }
 
     return console.log(roomscreated.length);
+    
+}
+
+//self test 4 meetingrooms eseay medium
+
+//easy can an individual attend all meetings given start and end time of meetings
+// meetingattendanceI([[13,14],[1,5],[6,7],[8,9],[10,12]])
+// meetingattendanceI([[13,14],[1,8],[7,8],[10,12]])
+
+function meetingattendanceI(meetings) {
+    if(meetings.length<1) return console.log(false);
+    if(meetings.length==1) return console.log(true);
+    meetings=meetings.sort((a,b)=>a[0]-b[0])
+console.log(meetings);
+    for (let i = 0; i < meetings.length-1; i++) {
+        let currmeeting=meetings[i]
+        let nextmeeting=meetings[i+1]
+
+        if(currmeeting[1]>nextmeeting[0]) return console.log('can attend all meetings? ',false);
+        
+    }
+    return console.log('can attend all meetings? ',true);
+}
+
+//medium meeting rooms 
+//given a set of meeting times find out how many rooms need be created to accomodate all meetings
+
+roomscreatedI([[10,14],[2,17],[1,5],[3,4],[6,9],[10,12]])
+roomscreatedI([[13,14],[1,5],[6,7],[8,9],[10,12]])
+
+function roomscreatedI(times) {
+    times=times.sort((a,b)=>a[0]-b[0])
+    console.log(times);
+    let rooms=[times[0][1]]
+     for(i=1;i<times.length;i++){
+        let currentmeeting=times[i]
+        let smallestroomtime=Math.min(...rooms)
+        let[currentstart,currentend]=currentmeeting
+        if(smallestroomtime>currentstart){
+            rooms.push(currentend)
+
+        }else{
+
+            rooms[rooms.indexOf(smallestroomtime)]=currentend
+
+        }
+     }
+
+     return console.log('self test 1:',rooms.length);
     
 }
