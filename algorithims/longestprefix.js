@@ -213,3 +213,39 @@ function longestprefix(words) {
     console.log(prefix);
 
  }
+
+ //self test 3 for prefix
+ prefixtestII(['flo,ur','flo,or','flo,wer','flo,w','flo,ew','flme','flo,me','flo,or'])
+
+ function prefixtestII(wordsarray) {
+
+    let lastword=wordsarray.pop()
+    let prefixarray=[]
+    let charindex=0
+    let prefixing=true
+    let prefix=''
+
+    while (prefixing) {
+        prefixing=false
+        for(i=0;i<wordsarray.length;i++){
+            let currentword=wordsarray[i]
+        //handles case where the first letter is not the same returns empty string
+            if(currentword[0]!=lastword[0]) return console.log('" "');
+
+            if(currentword[charindex]==lastword[charindex]){
+                prefixarray.push(lastword[charindex])
+            
+            }
+    
+        }
+        if(prefixarray.length==wordsarray.length){
+            charindex++
+            prefix+=prefixarray[0]
+            prefixarray=[]
+            prefixing=true
+        }
+    }
+
+    return console.log(prefix);
+    
+ }
