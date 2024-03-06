@@ -27,21 +27,52 @@ function plantbed(bed,flowers){
 }
 
 
-flowerbed([0,0,0,0,0,0,0,0],3)
+// flowerbed([0,0,0,0,0,0,0,0,0],6)
 
 function flowerbed(bed,flowers){
   
     
         for (let i = 0; i < bed.length; i++) {
             
-         if(bed[i]==1) continue
+        if(i==0&&bed[i]==0&&bed[1+1]==0)bed[i]=1,flowers--
+        if(bed[i]!=0) continue
         //  if(bed[0]==0&&bed[1]==0) 
            
          if(bed[i-1]==0&&bed[i]==0&&bed[i+1]==0) flowers--,bed[i]=1
+         //hamdle edge case of last 2 being empty pots
+         if(i==bed.length-1&&bed[i]==0&&bed[i-1]==0) flowers--,bed[i]=1
 
-         if(flowers==0) return console.log(flowers==0);
+         if(flowers==0) return console.log('all flowers planted: ',flowers==0,bed);
             
         }
         
-    console.log('all flowers planted: ',flowers==0);
+    console.log('all flowers planted: ',flowers==0,'\n',bed);
+}
+
+//self test 1 on flowerbed algorithim
+
+flowerbedtestI([0,0,0,0,0,0,0,0,0],5)
+
+function flowerbedtestI(bed,flowers) {
+
+for (let i = 0; i < bed.length; i++) {
+  
+    if(i==0&&bed[i]==0&&bed[i+1]==0) bed[i]=1,flowers--
+    if(bed[i]!=0)continue
+
+    //edge case of final port being a valid pot and flowers remaining
+    if(i==bed.length-1&&bed[i]==0&&bed[i-1]==0) bed[i]=1,flowers--
+    if(bed[i-1]==0&&bed[i]==0&&bed[i+1]==0){
+        bed[i]=1
+        flowers--
+        i++
+        if(flowers==0) return console.log('all flowers planted: ',flowers==0);
+    }else{
+        continue
+    }
+        
+    }
+
+    console.log(flowers==0,bed);
+    
 }
