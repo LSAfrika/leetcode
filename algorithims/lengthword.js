@@ -72,8 +72,8 @@ function lastwordlengthtestII(word){
 
  //lastwordlengthtestII('  3 ')
 
- laswordI('  3 ')
- laswordI('      ')
+//  laswordI('  3 ')
+//  laswordI('      ')
 
  function laswordI(word) {
 
@@ -88,5 +88,22 @@ function lastwordlengthtestII(word){
         word.pop()
     }
     console.log(word[word.length-1].length);
+    
+ }
+
+ //self test 4 lastword 
+ //added effeciency to it in that we start from the back of the string moving backwords
+// lastwordIV('')
+// lastwordIV('  ')
+lastwordIV('hello worlds    ')
+
+ function lastwordIV(s) {
+    //check if string is empty
+    if(s.trim().length==0) return console.log(-1);
+    let lastwordlength=0
+    for (let i = s.length-1; i >0; i--) {
+      if(s[i]==' '){ if(lastwordlength>0) return console.log(lastwordlength);  continue}
+      else{lastwordlength++}
+    }
     
  }
