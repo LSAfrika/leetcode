@@ -140,7 +140,27 @@ class linkedlist{
     }
 
 
+removevalue(value){
+    if(value ==this.head.value){
+        this.head=this.head.next
+        this.size--
 
+    }else{
+        let currentnode=this.head
+
+        while (currentnode.next&&currentnode.next.value!=value) {
+            currentnode=currentnode.next
+            
+        }
+
+        if(currentnode.next==null) return console.log('value not in list');
+       
+        let deletenode =currentnode.next
+        let nextnode=deletenode.next
+        currentnode.next=nextnode
+        this.size--
+    }
+}
 
 
 
@@ -173,6 +193,7 @@ llist.addatindex(8,80)
 llist.print()
 
 llist.removeatindex(5)
+llist.removevalue(70)
 
 llist.print()
 
