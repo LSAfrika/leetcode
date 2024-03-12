@@ -85,7 +85,7 @@ class Hashtable{
     }
 }
 
-
+// kcl 028x 
 
 const hashmap=new Hashtable(50)
 
