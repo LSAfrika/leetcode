@@ -49,21 +49,31 @@ class HashMap{
     }
     viewtable(){
     //   return console.log(this.table);
-        let table=`{\n `
+        let table=`{\n`
       for (let i = 0; i < this.table.length; i++) {
        
         if(!this.table[i]) continue
         let result=this.table[i]
 
         result.forEach(val => {
-        table+=`${val[0]}:${val[1]},\n`
+        table+=`  ${val[0]}:${val[1]},\n`
             
         });
         
       }
-      table+='\n}'
+      table+='}'
 
       console.log(table);
+    }
+
+    delete(key){
+        let index=this.hashing(key)
+        if(!this.table[index]) return console.log(undefined);
+        let keyindex=this.table[index].map(val=>val[0]).indexOf(key)
+
+        if(keyindex==-1) return console.log(undefined);
+        this.table[index].splice(keyindex,1)
+
     }
 }
 
@@ -76,6 +86,7 @@ hashtable.setter('helol','world2')
 hashtable.setter('helol','world3')
 // hashtable.setter('hello','world4')
 hashtable.setter('heoll','world4')
+
 hashtable.viewtable()
-hashtable.getter('hello')
-hashtable.getter('heoll')
+hashtable.delete('helol')
+hashtable.viewtable()
