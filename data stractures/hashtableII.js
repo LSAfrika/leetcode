@@ -12,7 +12,7 @@ class HashMap{
         let index=0
         for (let i = 0; i < key.length; i++) {
            index+=key.charCodeAt(i)
-            
+          //  console.log(key.charCodeAt(i),index,index%this.size);
         }
 
         return index%this.size
