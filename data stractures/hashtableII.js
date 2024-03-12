@@ -42,8 +42,10 @@ class HashMap{
     }
     getter(key){
         let index=this.hashing(key)
-
-        return console.log(this.table[index]||undefined);
+        if(!this.table[index]) return console.log(undefined);
+        let keyindex=this.table[index].map(values=>values[0]).indexOf(key)
+        return console.log('{',this.table[index][keyindex][0],':',this.table[index][keyindex][1],'}');
+        
     }
     viewtable(){
        return console.log(this.table);
@@ -68,8 +70,8 @@ hashtable.setter('hello','world')
 // hashtable.viewtable()
 hashtable.setter('helol','world2')
 hashtable.setter('helol','world3')
-hashtable.setter('hello','world4')
+// hashtable.setter('hello','world4')
 hashtable.setter('heoll','world4')
 hashtable.viewtable()
-hashtable.getter('hell0')
+hashtable.getter('hello')
 hashtable.getter('heoll')
