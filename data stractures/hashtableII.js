@@ -48,13 +48,17 @@ class HashMap{
         
     }
     viewtable(){
-       return console.log(this.table);
+    //   return console.log(this.table);
         let table=`{\n `
       for (let i = 0; i < this.table.length; i++) {
        
         if(!this.table[i]) continue
         let result=this.table[i]
-        table+=`${result[0]}:${result[1]},\n`
+
+        result.forEach(val => {
+        table+=`${val[0]}:${val[1]},\n`
+            
+        });
         
       }
       table+='\n}'
