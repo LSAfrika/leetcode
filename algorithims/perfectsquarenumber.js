@@ -131,7 +131,7 @@ function squaretestI(num) {
     
 }
 
-squaretestI(160)
+//squaretestI(160)
 
 
 //medium difficulty using reccursion O(logn)
@@ -158,9 +158,40 @@ function square(num,start,end){
 
 }
 
-mediumsquare(10000)
+//mediumsquare(10000)
 
 
+
+////// selftest 2 \\\\\\\\\
+// O(n)
+
+//easysquare(10000)
+
+function easysquare(num) {
+
+  //get half the size of original num
+  let numcopy=num
+  numcopy=Math.floor(numcopy/2)
+
+  for (let i = 0; i <= numcopy; i++) {
+   if(i*i==num) return console.log(num,'is square');
+  }
+    console.log(num,'not square');
+}
+
+
+mediumsquareIII(10000,0,Math.floor(10000/2))
+
+function mediumsquareIII(num,start,end){
+
+
+    if(start>end) return console.log(num,'medium not square');
+    let midpoint= Math.floor((start+end)/2)
+
+    if((midpoint*midpoint)==num) return console.log(num,num,' perfect squared');
+    if((midpoint*midpoint)>num) return mediumsquareIII(num,start,midpoint-1)
+    if((midpoint*midpoint)<num) return mediumsquareIII(num,midpoint+1,end)
+}
 
 
 
