@@ -68,7 +68,7 @@ function validP(word) {
 //validP('{}[]{[()]<>}')
 
 //self test valid parenthese
-validtest('{}[]{[()]<>>[]]}')
+//validtest('{}[]{[()]<>>[]]}')
 
 function validtest(parenthese) {
 
@@ -93,4 +93,38 @@ function validtest(parenthese) {
     if(stack.length==0) return console.log(parenthese,' valid ');
     return console.log('final: ',parenthese,' invalid ');
     
+}
+
+validtestI('{}[]{[()]<<>>[]}')
+
+function validtestI(s){
+
+    if(s.length%2!=0) return console.log('not even number:',false,s.length);
+    if(s[0]==']'||s[0]=='}'||s[0]==')'||s[0]=='>') return console.log(' wrong first char:',false,'"',s[0],'"');
+    if(s[s.length-1]=='['||s[s.length-1]=='{'||s[s.length-1]=='('||s[s.length-1]=='<') return console.log(' wrong last char:',false,'"',s[s.length-1],'"');
+
+let stack=[]
+
+for(i=0;i<s.length;i++){
+    let currchar=s[i]
+    
+    if(currchar=='['||currchar=='{'||currchar=='<'||currchar=='('){
+
+        stack.push(currchar)
+        // console.log(stack);
+
+    }else{
+        const popped=stack.pop()
+        if(popped=='('&&currchar !=')') return console.log('not valid parentehses: ',popped,currchar);
+        if(popped=='['&&currchar !=']') return console.log('not valid parentehses: ',popped,currchar);
+        if(popped=='{'&&currchar !='}') return console.log('not valid parentehses: ',popped,currchar);
+        if(popped=='<'&&currchar !='>') return console.log('not valid parentehses: ',popped,currchar);
+    }
+
+
+}
+
+console.log('valid parentheses? ',stack.length===0);
+
+
 }

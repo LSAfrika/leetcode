@@ -98,3 +98,24 @@ function twosumIII(nums,target) {
   console.log('no compliment');
 }
 
+
+
+
+twosumIV([1,4,5,3,6,7,8,2],11)
+
+function twosumIV(num,target) {
+let map={}
+
+for(i=0;i<num.length;i++){
+  let currentnum=num[i]
+  let compliment=target-currentnum
+
+  if(map[compliment]) return console.log(map[compliment],i);
+  map[currentnum]=i
+
+
+}
+
+console.log('no sum target');
+  
+}
