@@ -94,3 +94,28 @@ console.log(num,":",reverseint);
 
 
 reverseinttestII(-522)
+
+//test reverse int test 4
+
+
+reverseinttestII(-522)
+reverseint(-222)
+
+function reverseint(num) {
+
+    let negativenum=false
+    let numcopy=num
+    let reversednum=0
+    if(numcopy<0)numcopy=numcopy*-1,negativenum=true
+
+    while (numcopy>0) {
+        reversednum=reversednum*10+numcopy%10
+        numcopy=Math.floor(numcopy/10)
+        console.log(numcopy);
+    }
+
+    if(negativenum==true)reversednum=reversednum*-1
+
+    console.log('retest: ',num,':',reversednum);
+    
+}

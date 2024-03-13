@@ -94,7 +94,7 @@ function lastwordlengthtestII(word){
  //self test 4 lastword 
  //added effeciency to it in that we start from the back of the string moving backwords
 // lastwordIV('')
-// lastwordIV('  ')
+ lastwordIV('  ')
 lastwordIV('hello worlds    ')
 
  function lastwordIV(s) {
@@ -102,7 +102,10 @@ lastwordIV('hello worlds    ')
     if(s.trim().length==0) return console.log(-1);
     let lastwordlength=0
     for (let i = s.length-1; i >0; i--) {
-      if(s[i]==' '){ if(lastwordlength>0) return console.log(lastwordlength);  continue}
+      if(s[i]==' '){ 
+        if(lastwordlength>0) return console.log(lastwordlength);  
+        continue
+    }
       else{lastwordlength++}
     }
     

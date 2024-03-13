@@ -74,3 +74,38 @@ console.log(char,count);
 }
 
 mostrepeattestI('sdfsferwfdgteyfrrrrrrtgdsaswe////etrrgfgio088676')
+repeatedcharII('sdfsferwfdgteyrtgdsaswe////etrrgfgio088676')
+
+repeatedcharII('sdfsferwfdgteyfrrrrrrtgdsaswe////etrrgfgio088676')
+
+
+// SELF TEST 2\\
+
+function repeatedcharII(word){
+
+    counter=0
+    letter=''
+    let charmap={}
+
+    for (const char of word) {
+        
+   
+
+if((/[a-zA-Z]/).test(char)==true){
+   
+    if(charmap[char]){
+        charmap[char]+=1
+        if(charmap[char]>counter) letter=char,counter=charmap[char]
+
+    }else{
+
+        charmap[char]=1
+        if(counter==0)letter=char,counter++
+
+    }
+}
+        
+    }
+
+    console.log(letter,counter);
+}
