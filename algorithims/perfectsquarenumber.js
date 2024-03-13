@@ -188,7 +188,7 @@ function mediumsquareIII(num,start,end){
     if(start>end) return console.log(num,'medium not square');
     let midpoint= Math.floor((start+end)/2)
 
-    if((midpoint*midpoint)==num) return console.log(num,num,' perfect squared');
+    if((midpoint*midpoint)==num) return console.log(num,' perfect squared');
     if((midpoint*midpoint)>num) return mediumsquareIII(num,start,midpoint-1)
     if((midpoint*midpoint)<num) return mediumsquareIII(num,midpoint+1,end)
 }
