@@ -47,19 +47,20 @@ for(i=0;i<valueholder.length-1;i++){
     return console.log(true);
 }
 
-subsequence('abcde','ace')
-subsequenceII('abcde','dac')
+// subsequence('abcde','ace')
+ subsequenceII('abcde','acd')
 
 
 // second do over a more effecient way compared to the first
+//time complexity of O(n) we traverse the string of the subsequence once and return the value
 function subsequenceII(string,target){
     if(string==target) return console.log(true);
 
-    let targetarray=Array.from(target)
-
+    let targetarray=Array.from(target).reverse()
+ console.log(targetarray);
     for(char of string){
-        if(char==targetarray[0]){
-            targetarray.shift()
+        if(char==targetarray[targetarray.length-1]){
+            targetarray.pop()
 
           if(targetarray.length==0) return console.log(true);
         }
@@ -70,3 +71,41 @@ function subsequenceII(string,target){
     console.log(targetarray.length==0);
 
 }
+
+
+
+subsequenceIII('abcde','dac')
+subsequenceIII('abcde','ace')
+subsequenceIII('abcde','eab')
+
+
+//time complexity O(nm) lebgth of target and string are multiplied not effecient
+function subsequenceIII(string,target){
+
+    let letterposition=[]
+    for(i=0;i<target.length;i++){
+
+        let charindex=string.indexOf(target[i])
+        if( charindex==-1) return console.log(false);
+
+        letterposition.push(charindex)
+
+        if(letterposition.length>=2){
+
+            console.log(letterposition);
+            let last=letterposition[letterposition.length-1]
+            let secondlast=letterposition[letterposition.length-2]
+
+            if(last<secondlast) return console.log(false)
+        }
+
+
+    }
+
+    return console.log(true)
+}
+
+
+
+
+

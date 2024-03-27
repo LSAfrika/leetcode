@@ -49,8 +49,8 @@ function uniqueII(s){
 
 }
 
-unique('abcddedfghij')
-uniqueII('abcdedfghij')
+//unique('abcddedfghij')
+//uniqueII('abcdedfghij')
 
 
 //TEST 1\\
@@ -78,4 +78,102 @@ function unique(s){
         console.log('longest substring: ',substringarray[0].substring,' length: ',substringarray[0].length);
 }
 
-unique('abcdeafghijklmnoh')
+//unique('abcdeafghijklmnoh')
+substring('abcdeabefghdiajkclmnobh')
+//uniqueII('abcdeabefghdiajkclmnobh')
+
+function substring(s){
+   
+    let left=0
+    let set=new Set()
+    let sstring=s[0]
+    let comparestring=''
+   
+    set.add(s[0])
+    for(i=1;i<s.length;i++){
+        // console.log(s[i]);
+        if(set.has(s[i])){
+          
+            set.clear()  //'abcdeabfghijkclmnoh'
+            set.add(s[left+1])
+           
+
+           
+            if(comparestring.length<sstring.length)comparestring=sstring
+           // sstring=''
+            sstring=s[left+1]
+            left++
+            i=left
+           
+          //  right=left
+            
+
+         
+
+            
+        //    console.log('compare string: ',comparestring);
+        }else{
+         //   right++
+            sstring+=s[i]
+            // console.log(i,sstring);
+        }
+
+
+    }
+
+   
+    if(sstring.length>comparestring.length) return console.log(sstring);
+    console.log(comparestring);
+}
+
+
+
+
+substringII('abcdeabefghdiaejkclmnobh')
+
+function substringII(s){
+
+    let substring=''
+    let tempsubstring=s[0]
+    let charset=new Set(s[0])
+    let left=0
+
+    for(i=1;i<s.length;i++){
+
+        if(charset.has(s[i])){
+
+            if(tempsubstring.length>substring.length) substring=tempsubstring
+            charset.clear()
+            charset.add(s[left+1])
+            tempsubstring=s[i]
+            left++
+            i=left
+
+
+        }else{
+            
+            tempsubstring+=s[i]
+
+
+        }
+    }
+
+    (tempsubstring.length<substring.length) ? console.log(substring):console.log(tempsubstring);
+    
+    
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
