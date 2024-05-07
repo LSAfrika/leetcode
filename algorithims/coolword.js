@@ -16,13 +16,13 @@ function coolword(s,l){
             if(coolword.size==l){
                 word++
 
-                cw.push([...coolword])
+                // cw.push([...coolword])
+                // console.log('coolword current: ',...coolword);
                
                 coolword.delete(s[left])
-                console.log('coolword current: ',...coolword);
             
                 left++
-                // i=right
+             
 
 
             }
@@ -45,5 +45,5 @@ function coolword(s,l){
 
 }
 
-coolword('abcdcfce',4)
-coolword('abcdcfde',4)
+coolword('abcdcfce',3)
+coolword('abcdcfde',3)
