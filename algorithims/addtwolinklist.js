@@ -224,3 +224,39 @@ function ListNode(val, next) {
             return outputnode.next
 
     }
+
+
+    //reverdse integer
+//     let reverse=0
+//     let reversing=true
+//     let isnegative=false
+
+//     console.log(Math.pow(-2,3),x)
+
+//     if(x<0){isnegative=true;x=x*-1}
+
+
+//     while(reversing){
+//         reversing=false
+
+//         reverse=reverse*10+x%10
+//         x=Math.floor(x/10)
+
+//         if(x>0) reversing=true
+
+        
+//     }
+
+// if(isnegative)reverse=reverse*-1
+//     console.log(reverse)
+
+//   if(reverse>Math.pow(2,31)||reverse<Math.pow(-2,31)) return 0
+//     return reverse
+obj()
+function obj(){
+    let stat={'red':1,2:2,3:3}
+
+    for (const key in stat) {
+       console.log(key);
+    }
+}
